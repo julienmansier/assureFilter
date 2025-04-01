@@ -1,0 +1,1600 @@
+{
+  "config": {
+    "malware": true,
+    "suspect": false,
+    "vulnThreshold": 6,
+    "vulnExists": true,
+    "behaviors": [
+      "BH12179",
+      "BH12130",
+      "BH12174"
+    ]
+  },
+  "findings": [
+    {
+      "type": "vulnerability",
+      "name": "CVE-2014-0114",
+      "severity": 7.5,
+      "description": "Apache Commons BeanUtils, as distributed in lib/commons-beanutils-1.8.0.jar in Apache Struts 1.x through 1.3.10 and in other products requiring commons-beanutils through 1.9.2, does not suppress the class property, which allows remote attackers to \"manipulate\" the ClassLoader and execute arbitrary code via the class parameter, as demonstrated by the passing of this parameter to the getClass method of the ActionForm object in Struts 1.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-tools-generic-3.0.jar <- via commons-beanutils:commons-beanutils/1.9.3 (package)",
+        "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-tools-generic-3.0.jar "
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2015-1832",
+      "severity": 9.1,
+      "description": "XML external entity (XXE) vulnerability in the SqlXmlUtil code in Apache Derby before 10.12.1.1, when a Java Security Manager is not in place, allows context-dependent attackers to read arbitrary files or cause a denial of service (resource consumption) via vectors involving XmlVTI and the XML datatype.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/derby-10.9.1.0.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2017-1000190",
+      "severity": 9.1,
+      "description": "SimpleXML (latest version 2.7.1) is vulnerable to an XXE vulnerability resulting SSRF, information disclosure, DoS and so on.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/junit4-ant-2.7.2.jar <- via Simple XML/2.7.1 (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2019-10086",
+      "severity": 7.3,
+      "description": "In Apache Commons Beanutils 1.9.2, a special BeanIntrospector class was added which allows suppressing the ability for an attacker to access the classloader via the class property available on all Java objects. We, however were not using this by default characteristic of the PropertyUtilsBean.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-tools-generic-3.0.jar <- via commons-beanutils:commons-beanutils/1.9.3 (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2020-13936",
+      "severity": 8.8,
+      "description": "An attacker that is able to modify Velocity templates may execute arbitrary Java code or run arbitrary system commands with the same privileges as the account running the Servlet container. This applies to applications that allow untrusted users to upload/modify velocity templates running Apache Velocity Engine versions up to 2.2.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-engine-core-2.0.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2020-13949",
+      "severity": 7.5,
+      "description": "In Apache Thrift 0.9.3 to 0.13.0, malicious RPC clients could send short messages which would result in a large memory allocation, potentially leading to denial of service.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/jaegertracer-configurator/lib/libthrift-0.13.0.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2020-1945",
+      "severity": 6.3,
+      "description": "Apache Ant 1.1 to 1.9.14 and 1.10.0 to 1.10.7 uses the default temporary directory identified by the Java system property java.io.tmpdir for several tasks and may thus leak sensitive information. The fixcrlf and replaceregexp tasks also copy files from the temporary directory back into the build tree allowing an attacker to inject modified source files into the build process.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/janino-3.0.9.jar <- via org.apache.ant:ant/1.7.1 (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2020-28052",
+      "severity": 8.1,
+      "description": "An issue was discovered in Legion of the Bouncy Castle BC Java 1.65 and 1.66. The OpenBSDBCrypt.checkPassword utility method compared incorrect data when checking the password, allowing incorrect passwords to indicate they were matching with previously hashed ones that were different.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.bouncycastle:bcprov-jdk15on/1.65 (package)",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/bcprov-jdk15on-1.65.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2020-36518",
+      "severity": 7.5,
+      "description": "jackson-databind before 2.13.0 allows a Java StackOverflow exception and denial of service via a large depth of nested objects.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jackson-databind-2.12.3.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/spatial4j-0.7.jar <- via com.fasterxml.jackson.core:jackson-databind/2.7.9.2 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/htrace-core4-4.1.0-incubating.jar <- via jackson-databind/2.4.0 (package)",
+        "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/jackson-databind-2.12.3.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2020-7692",
+      "severity": 9.1,
+      "description": "PKCE support is not implemented in accordance with the RFC for OAuth 2.0 for Native Apps. Without the use of PKCE, the authorization code returned by an authorization server is not enough to guarantee that the client that issued the initial authorization request is the one that will be authorized. An attacker is able to obtain the authorization code using a malicious app on the client-side and use it to gain authorization to the protected resource. This affects the package com.google.oauth-client:google-oauth-client before 1.31.0.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-oauth-client-1.29.2.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2020-8908",
+      "severity": 3.3,
+      "description": "A temp directory creation vulnerability exists in all versions of Guava, allowing an attacker with access to the machine to potentially access data in a temporary directory created by the Guava API com.google.common.io.Files.createTempDir(). By default, on unix-like systems, the created directory is world-readable (readable by an attacker with access to the system). The method in question has been marked @Deprecated in versions 30.0 and later and should not be used. For Android developers, we recommend choosing a temporary directory API provided by Android, such as context.getCacheDir(). For other Java developers, we recommend migrating to the Java 7 API java.nio.file.Files.createTempDirectory() which explicitly configures permissions of 700, or configuring the Java runtime's java.io.tmpdir system property to point to a location whose permissions are appropriately configured.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/junit4-ant-2.7.2.jar <- via Guava: Google Core Libraries for Java/25.0-jre (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/guava-25.1-jre.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-cloud-storage-1.113.14.jar <- via com.google.guava:guava/30.1-android (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-21290",
+      "severity": 5.5,
+      "description": "Netty is an open-source, asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers & clients. In Netty before version 4.1.59.Final there is a vulnerability on Unix-like systems involving an insecure temp file. When netty's multipart decoders are used local information disclosure can occur via the local system temporary directory if temporary storing uploads on the disk is enabled. On unix-like systems, the temporary directory is shared between all user. As such, writing to this directory using APIs that do not explicitly set the file/directory permissions can lead to information disclosure. Of note, this does not impact modern MacOS Operating Systems. The method \"File.createTempFile\" on unix-like systems creates a random file, but, by default will create this file with the permissions \"-rw-r--r--\". Thus, if sensitive information is written to this file, other local users can read this information. This is the case in netty's \"AbstractDiskHttpData\" is vulnerable. This has been fixed in version 4.1.59.Final. As a workaround, one may specify your own \"java.io.tmpdir\" when you start the JVM or use \"DefaultHttpDataFactory.setBaseDir(...)\" to set the directory to something that is only readable by the current user. Exploitable: YES Introduced in: 4.1.46.Final Resolved in: 4.1.59.Final Patch mandate: NO Discovered by: - Sourced from: NVD, OSV Description: Netty is an open-source, asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers & clients. In Netty before version 4.1.59.Final there is a vulnerability on Unix-like systems involving an insecure temp file. When netty's multipart decoders are used local information disclosure can occur via the local system temporary directory if temporary storing uploads on the disk is enabled. On unix-like systems, the temporary directory is shared between all user. As such, writing to this directory using APIs that do not explicitly set the file/directory permissions can lead to information disclosure. Of note, this does not impact modern MacOS Operating Systems. The method \"File.createTempFile\" on unix-like systems creates a random file, but, by default will create this file with the permissions \"-rw-r--r--\". Thus, if sensitive information is written to this file, other local users can read this information. This is the case in netty's \"AbstractDiskHttpData\" is vulnerable. This has been fixed in version 4.1.59.Final. As a workaround, one may specify your own \"java.io.tmpdir\" when you start the JVM or use \"DefaultHttpDataFactory.setBaseDir(...)\" to set the directory to something that is only readable by the current user.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-buffer-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-resolver-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-codec-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-transport-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-transport-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-buffer-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-transport-native-unix-common-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-resolver-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-codec-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-transport-native-epoll-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-transport-native-epoll-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-handler-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-common-4.1.50.Final.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-transport-native-unix-common-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-common-4.1.50.Final.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-handler-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-22569",
+      "severity": 5.5,
+      "description": "An issue in protobuf-java allowed the interleaving of com.google.protobuf.UnknownFieldSet fields in such a way that would be processed out of order. A small malicious payload can occupy the parser for several minutes by creating large numbers of short-lived objects that cause frequent, repeated pauses. We recommend upgrading libraries beyond the vulnerable versions.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via com.google.protobuf:protobuf-java/3.11.4 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/protobuf-java-3.11.0.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-cloud-storage-1.113.14.jar <- via com.google.protobuf:protobuf-java/3.15.5 (package)",
+        "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/protobuf-java-3.11.0.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-22573",
+      "severity": 7.3,
+      "description": "The vulnerability is that IDToken verifier does not verify if token is properly signed. Signature verification makes sure that the token's payload comes from valid provider, not from someone else. An attacker can provide a compromised token with custom payload. The token will pass the validation on the client side. We recommend upgrading to version 1.33.3 or above",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-oauth-client-1.29.2.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-cloud-storage-1.113.14.jar <- via com.google.oauth-client:google-oauth-client/1.31.4 (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-33813",
+      "severity": 7.5,
+      "description": "An XXE issue in SAXBuilder in JDOM through 2.0.6 allows attackers to cause a denial of service via a crafted HTTP request.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.jdom:jdom2/2.0.6 (package)",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/jdom2-2.0.6.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-34429",
+      "severity": 5.3,
+      "description": "For Eclipse Jetty versions 9.4.37-9.4.42, 10.0.1-10.0.5 & 11.0.1-11.0.5, URIs can be crafted using some encoded characters to access the content of the WEB-INF directory and/or bypass some security constraints. This is a variation of the vulnerability reported in CVE-2021-28164/GHSA-v7ff-8wcx-gmc5.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-deploy-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-webapp/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-webapp-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-servlets-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-webapp/9.4.41.v20210516 (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-35515",
+      "severity": 7.5,
+      "description": "When reading a specially crafted 7Z archive, the construction of the list of codecs that decompress an entry can result in an infinite loop. This could be used to mount a denial of service attack against services that use Compress' sevenz package.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/commons-compress-1.20.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-35516",
+      "severity": 7.5,
+      "description": "When reading a specially crafted 7Z archive, Compress can be made to allocate large amounts of memory that finally leads to an out of memory error even for very small inputs. This could be used to mount a denial of service attack against services that use Compress' sevenz package.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/commons-compress-1.20.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-35517",
+      "severity": 7.5,
+      "description": "When reading a specially crafted TAR archive, Compress can be made to allocate large amounts of memory that finally leads to an out of memory error even for very small inputs. This could be used to mount a denial of service attack against services that use Compress' tar package.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/commons-compress-1.20.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-36090",
+      "severity": 7.5,
+      "description": "When reading a specially crafted ZIP archive, Compress can be made to allocate large amounts of memory that finally leads to an out of memory error even for very small inputs. This could be used to mount a denial of service attack against services that use Compress' zip package.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/commons-compress-1.20.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-37136",
+      "severity": 7.5,
+      "description": "The Bzip2 decompression decoder function doesn't allow setting size restrictions on the decompressed output data (which affects the allocation size used during decompression). All users of Bzip2Decoder are affected. The malicious input can trigger an OOME and so a DoS attack",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-codec-4.1.50.Final.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-codec-4.1.50.Final.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-handler-4.1.50.Final.jar <- via io.netty:netty-codec/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-handler-4.1.50.Final.jar <- via io.netty:netty-codec/4.1.50.Final (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-37137",
+      "severity": 7.5,
+      "description": "The Snappy frame decoder function doesn't restrict the chunk length which may lead to excessive memory usage. Beside this it also may buffer reserved skippable chunks until the whole chunk was received which may lead to excessive memory usage as well. This vulnerability can be triggered by supplying malicious input that decompresses to a very big size (via a network stream or a file) or by sending a huge skippable chunk.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-codec-4.1.50.Final.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-codec-4.1.50.Final.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-handler-4.1.50.Final.jar <- via io.netty:netty-codec/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-handler-4.1.50.Final.jar <- via io.netty:netty-codec/4.1.50.Final (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-37404",
+      "severity": 9.8,
+      "description": "There is a potential heap buffer overflow in Apache Hadoop libhdfs native code. Opening a file path provided by user without validation may result in a denial of service or arbitrary code execution. Users should upgrade to Apache Hadoop 2.10.2, 3.2.3, 3.3.2 or higher.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/hadoop-common-3.2.2.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-37714",
+      "severity": 7.5,
+      "description": "jsoup is a Java library for working with HTML. Those using jsoup versions prior to 1.14.2 to parse untrusted HTML or XML may be vulnerable to DOS attacks. If the parser is run on user supplied input, an attacker may supply content that causes the parser to get stuck (loop indefinitely until cancelled), to complete more slowly than usual, or to throw an unexpected exception. This effect may support a denial of service attack. The issue is patched in version 1.14.2. There are a few available workarounds. Users may rate limit input parsing, limit the size of inputs based on system resources, and/or implement thread watchdogs to cap and timeout parse runtimes.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.jsoup:jsoup/1.13.1 (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-44228",
+      "severity": 10,
+      "description": "Apache Log4j2 JNDI features used in configuration, log messages, and parameters do not protect against attacker controlled LDAP and other JNDI related endpoints. An attacker who can control log messages or log message parameters can execute arbitrary code loaded from LDAP servers when message lookup substitution is enabled. This vulnerability is specific to log4j-core and does not affect log4net, log4cxx, or other Apache Logging Services projects.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/log4j-core-2.14.1.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/ext/log4j-core-2.14.1.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-44548",
+      "severity": 9.8,
+      "description": "An Improper Input Validation vulnerability in DataImportHandler of Apache Solr allows an attacker to provide a Windows UNC path resulting in an SMB network call being made from the Solr host to another host on the network. If the attacker has wider access to the network, this may lead to SMB attacks, which may result in: * The exfiltration of sensitive data such as OS user hashes (NTLM/LM hashes), * In case of misconfigured systems, SMB Relay Attacks which can lead to user impersonation on SMB Shares or, in a worse-case scenario, Remote Code Execution This issue affects all Apache Solr versions prior to 8.11.1. This issue only affects Windows.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-44832",
+      "severity": 6.6,
+      "description": "Apache Log4j2 is vulnerable to a remote code execution (RCE) attack when a configuration uses a JDBC Appender with a JNDI LDAP data source URI when an attacker has control of the target LDAP server. This issue is fixed by limiting JNDI data source names to the Java protocol.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/log4j-core-2.14.1.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/ext/log4j-core-2.14.1.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-45046",
+      "severity": 9,
+      "description": "It was found that the fix to address CVE-2021-44228 (Log4Shell) was incomplete in certain non-default configurations. This could allow attackers with control over Thread Context Map (MDC) input data when the logging configuration uses a non-default Pattern Layout with either a Context Lookup (for example, $${ctx:loginId}) or a Thread Context Map pattern (%X, %mdc, or %MDC) to craft malicious input data using a JNDI Lookup pattern resulting in an information leak and remote code execution in some environments and local code execution in all environments. The issue was fixed by removing support for message lookup patterns and disabling JNDI functionality by default.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/log4j-core-2.14.1.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/ext/log4j-core-2.14.1.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-45105",
+      "severity": 5.9,
+      "description": "Some Log4j2 versions do not protect from uncontrolled recursion from self-referential lookups. This allows an attacker with control over Thread Context Map data to cause a denial of service when a crafted string is interpreted.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/log4j-core-2.14.1.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/ext/log4j-core-2.14.1.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2021-46877",
+      "severity": 7.5,
+      "description": "jackson-databind 2.10.x through 2.12.x before 2.12.6 and 2.13.x before 2.13.1 allows attackers to cause a denial of service (2 GB transient heap usage per read) in uncommon situations involving JsonNode JDK serialization.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jackson-databind-2.12.3.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/jackson-databind-2.12.3.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-2048",
+      "severity": 7.5,
+      "description": "In Eclipse Jetty HTTP/2 server implementation, when encountering an invalid HTTP/2 request, the error handling has a bug that can wind up not properly cleaning up the active connections and associated resources. This can lead to a Denial of Service scenario where there are no enough resources left to process good requests.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/lib/http2-server-9.4.41.v20210516.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-23437",
+      "severity": 6.5,
+      "description": "There's a vulnerability within the Apache Xerces Java (XercesJ) XML parser when handling specially crafted XML document payloads. This causes, the XercesJ XML parser to wait in an infinite loop, which may sometimes consume system resources for prolonged duration. This vulnerability is present within XercesJ version 2.12.1 and the previous versions.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via xerces:xercesImpl/2.12.0 (package)",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/xercesImpl-2.12.0.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-23596",
+      "severity": 7.5,
+      "description": "Junrar is an open source java RAR archive library. In affected versions A carefully crafted RAR archive can trigger an infinite loop while extracting said archive. The impact depends solely on how the application uses the library, and whether files can be provided by malignant users. The problem is patched in 7.4.1. There are no known workarounds and users are advised to upgrade as soon as possible.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via com.github.junrar:junrar/4.0.0 (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-24823",
+      "severity": 5.5,
+      "description": "Netty is an open-source, asynchronous event-driven network application framework. The package `io.netty:netty-codec-http` prior to version 4.1.77.Final contains an insufficient fix for CVE-2021-21290. When Netty's multipart decoders are used local information disclosure can occur via the local system temporary directory if temporary storing uploads on the disk is enabled. This only impacts applications running on Java version 6 and lower. Additionally, this vulnerability impacts code running on Unix-like systems, and very old versions of Mac OSX and Windows as they all share the system temporary directory between all users. Version 4.1.77.Final contains a patch for this vulnerability. As a workaround, specify one's own `java.io.tmpdir` when starting the JVM or use DefaultHttpDataFactory.setBaseDir(...) to set the directory to something that is only readable by the current user.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-buffer-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-resolver-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-codec-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-transport-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-transport-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-buffer-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-transport-native-unix-common-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-resolver-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-codec-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-transport-native-epoll-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-transport-native-epoll-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-handler-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-common-4.1.50.Final.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-transport-native-unix-common-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-common-4.1.50.Final.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-handler-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-25168",
+      "severity": 9.8,
+      "description": "Apache Hadoop's FileUtil.unTar(File, File) API does not escape the input file name before being passed to the shell. An attacker can inject arbitrary commands. This is only used in Hadoop 3.3 InMemoryAliasMap.completeBootstrapTransfer, which is only ever run by a local user. It has been used in Hadoop 2.x for yarn localization, which does enable remote code execution. It is used in Apache Spark, from the SQL command ADD ARCHIVE. As the ADD ARCHIVE command adds new binaries to the classpath, being able to execute shell scripts does not confer new permissions to the caller. SPARK-38305. \"Check existence of file before untarring/zipping\", which is included in 3.3.0, 3.1.4, 3.2.2, prevents shell commands being executed, regardless of which version of the hadoop libraries are in use. Users should upgrade to Apache Hadoop 2.10.2, 3.2.4, 3.3.3 or upper (including HADOOP-18136).",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/hadoop-common-3.2.2.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-25647",
+      "severity": 7.5,
+      "description": "The package com.google.code.gson:gson before 2.8.9 are vulnerable to Deserialization of Untrusted Data via the writeReplace() method in internal classes, which may lead to DoS attacks.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/gson-2.7.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/protobuf-java-util-3.11.0.jar <- via com.google.code.gson:gson/2.8.6 (package)",
+        "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-cloud-storage-1.113.14.jar <- via com.google.code.gson:gson/2.8.6 (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-26612",
+      "severity": 9.8,
+      "description": "In Apache Hadoop, The unTar function uses unTarUsingJava function on Windows and the built-in tar utility on Unix and other OSes. As a result, a TAR entry may create a symlink under the expected extraction directory which points to an external directory. A subsequent TAR entry may extract an arbitrary file into the external directory using the symlink name. This however would be caught by the same targetDirPath check on Unix because of the getCanonicalPath call. However on Windows, getCanonicalPath doesn't resolve symbolic links, which bypasses the check. unpackEntries during TAR extraction follows symbolic links which allows writing outside expected base directory on Windows. This was addressed in Apache Hadoop 3.2.3",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/hadoop-common-3.2.2.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-3171",
+      "severity": 7.5,
+      "description": "A parsing issue with binary data in protobuf-java core and lite versions prior to 3.21.7, 3.20.3, 3.19.6 and 3.16.3 can lead to a denial of service attack. Inputs containing multiple instances of non-repeated embedded messages with repeated or unknown fields causes objects to be converted back-n-forth between mutable and immutable forms, resulting in potentially long garbage collection pauses. We recommend updating to the versions mentioned above.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via com.google.protobuf:protobuf-java/3.11.4 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/protobuf-java-3.11.0.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-cloud-storage-1.113.14.jar <- via com.google.protobuf:protobuf-java/3.15.5 (package)",
+        "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/protobuf-java-3.11.0.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-32287",
+      "severity": 7.5,
+      "description": "A relative path traversal vulnerability in a FileUtil class used by the PEAR management component of Apache UIMA allows an attacker to create files outside the designated target directory using carefully crafted ZIP entry names. This issue affects Apache UIMA Apache UIMA version 3.3.0 and prior versions. Note that PEAR files should never be installed into an UIMA installation from untrusted sources because PEAR archives are executable plugins that will be able to perform any actions with the same privileges as the host Java Virtual Machine.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.apache.uima:uimaj-core/3.1.1 (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-3509",
+      "severity": 7.5,
+      "description": "A parsing issue similar to CVE-2022-3171, but with textformat in protobuf-java core and lite versions prior to 3.21.7, 3.20.3, 3.19.6 and 3.16.3 can lead to a denial of service attack. Inputs containing multiple instances of non-repeated embedded messages with repeated or unknown fields causes objects to be converted back-n-forth between mutable and immutable forms, resulting in potentially long garbage collection pauses. We recommend updating to the versions mentioned above.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via com.google.protobuf:protobuf-java/3.11.4 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/protobuf-java-3.11.0.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-cloud-storage-1.113.14.jar <- via com.google.protobuf:protobuf-java/3.15.5 (package)",
+        "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/protobuf-java-3.11.0.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-3510",
+      "severity": 7.5,
+      "description": "A parsing issue similar to CVE-2022-3171, but with Message-Type Extensions in protobuf-java core and lite versions prior to 3.21.7, 3.20.3, 3.19.6 and 3.16.3 can lead to a denial of service attack. Inputs containing multiple instances of non-repeated embedded messages with repeated or unknown fields causes objects to be converted back-n-forth between mutable and immutable forms, resulting in potentially long garbage collection pauses. We recommend updating to the versions mentioned above.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via com.google.protobuf:protobuf-java/3.11.4 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/protobuf-java-3.11.0.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-cloud-storage-1.113.14.jar <- via com.google.protobuf:protobuf-java/3.15.5 (package)",
+        "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/protobuf-java-3.11.0.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-36033",
+      "severity": 6.1,
+      "description": "jsoup is a Java HTML parser, built for HTML editing, cleaning, scraping, and cross-site scripting (XSS) safety. jsoup may incorrectly sanitize HTML including `javascript:` URL expressions, which could allow XSS attacks when a reader subsequently clicks that link. If the non-default `SafeList.preserveRelativeLinks` option is enabled, HTML including `javascript:` URLs that have been crafted with control characters will not be sanitized. If the site that this HTML is published on does not set a Content Security Policy, an XSS attack is then possible. This issue is patched in jsoup 1.15.3. Users should upgrade to this version. Additionally, as the unsanitized input may have been persisted, old content should be cleaned again using the updated version. To remediate this issue without immediately upgrading: - disable `SafeList.preserveRelativeLinks`, which will rewrite input URLs as absolute URLs - ensure an appropriate [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is defined. (This should be used regardless of upgrading, as a defence-in-depth best practice.)",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.jsoup:jsoup/1.13.1 (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-36364",
+      "severity": 8.8,
+      "description": "Apache Calcite Avatica JDBC driver creates HTTP client instances based on class names provided via `httpclient_impl` connection property; however, the driver does not verify if the class implements the expected interface before instantiating it, which can lead to code execution loaded via arbitrary classes and in rare cases remote code execution. To exploit the vulnerability: 1) the attacker needs to have privileges to control JDBC connection parameters; 2) and there should be a vulnerable class (constructor with URL parameter and ability to execute code) in the classpath. From Apache Calcite Avatica 1.22.0 onwards, it will be verified that the class implements the expected interface before invoking its constructor.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/avatica-core-1.18.0.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-39135",
+      "severity": 9.8,
+      "description": "Apache Calcite 1.22.0 introduced the SQL operators EXISTS_NODE, EXTRACT_XML, XML_TRANSFORM and EXTRACT_VALUE do not restrict XML External Entity references in their configuration, making them vulnerable to a potential XML External Entity (XXE) attack. Therefore any client exposing these operators, typically by using Oracle dialect (the first three) or MySQL dialect (the last one), is affected by this vulnerability (the extent of it will depend on the user under which the application is running). From Apache Calcite 1.32.0 onwards, Document Type Declarations and XML External Entity resolution are disabled on the impacted operators.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/calcite-core-1.27.0.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-40152",
+      "severity": 7.5,
+      "description": "Those using Woodstox to parse XML data may be vulnerable to Denial of Service attacks (DOS) if DTD support is enabled. If the parser is running on user supplied input, an attacker may supply content that causes the parser to crash by stackoverflow. This effect may support a denial of service attack.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/s3-repository/lib/woodstox-core-6.2.4.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/woodstox-core-6.2.4.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/woodstox-core-6.2.4.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-41853",
+      "severity": 9.8,
+      "description": "Those using java.sql.Statement or java.sql.PreparedStatement in hsqldb (HyperSQL DataBase) to process untrusted input may be vulnerable to a remote code execution attack. By default it is allowed to call any static method of any Java class in the classpath resulting in code execution. The issue can be prevented by updating to 2.7.1 or by setting the system property \"hsqldb.method_class_names\" to classes which are allowed to be called. For example, System.setProperty(\"hsqldb.method_class_names\", \"abc\") or Java argument -Dhsqldb.method_class_names=\"abc\" can be used. From version 2.7.1 all classes by default are not accessible except those in java.lang.Math and need to be manually enabled.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/hsqldb-2.4.0.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-42003",
+      "severity": 7.5,
+      "description": "In FasterXML jackson-databind before versions 2.13.4.1 and 2.12.17.1, resource exhaustion can occur because of a lack of a check in primitive value deserializers to avoid deep wrapper array nesting, when the UNWRAP_SINGLE_VALUE_ARRAYS feature is enabled.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jackson-databind-2.12.3.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/spatial4j-0.7.jar <- via com.fasterxml.jackson.core:jackson-databind/2.7.9.2 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/htrace-core4-4.1.0-incubating.jar <- via jackson-databind/2.4.0 (package)",
+        "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/jackson-databind-2.12.3.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-42004",
+      "severity": 7.5,
+      "description": "In FasterXML jackson-databind before 2.13.4, resource exhaustion can occur because of a lack of a check in BeanDeserializer._deserializeFromArray to prevent use of deeply nested arrays. An application is vulnerable only with certain customized choices for deserialization.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jackson-databind-2.12.3.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/spatial4j-0.7.jar <- via com.fasterxml.jackson.core:jackson-databind/2.7.9.2 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/htrace-core4-4.1.0-incubating.jar <- via jackson-databind/2.4.0 (package)",
+        "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/jackson-databind-2.12.3.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-42889",
+      "severity": 9.8,
+      "description": "Apache Commons Text performs variable interpolation, allowing properties to be dynamically evaluated and expanded. The standard format for interpolation is \"${prefix:name}\", where \"prefix\" is used to locate an instance of org.apache.commons.text.lookup.StringLookup that performs the interpolation. Starting with version 1.5 and continuing through 1.9, the set of default Lookup instances included interpolators that could result in arbitrary code execution or contact with remote servers. These lookups are: - \"script\" - execute expressions using the JVM script execution engine (javax.script) - \"dns\" - resolve dns records - \"url\" - load values from urls, including from remote servers Applications using the interpolation defaults in the affected versions may be vulnerable to remote code execution or unintentional contact with remote servers if untrusted configuration values are used. Users are recommended to upgrade to Apache Commons Text 1.10.0, which disables the problematic interpolators by default.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-text-1.6.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2022-46337",
+      "severity": 9.8,
+      "description": "A cleverly devised username might bypass LDAP authentication checks. In LDAP-authenticated Derby installations, this could let an attacker fill up the disk by creating junk Derby databases. In LDAP-authenticated Derby installations, this could also allow the attacker to execute malware which was visible to and executable by the account which booted the Derby server. In LDAP-protected databases which weren't also protected by SQL GRANT/REVOKE authorization, this vulnerability could also let an attacker view and corrupt sensitive data and run sensitive database functions and procedures.Mitigation:Users should upgrade to Java 21 and Derby 10.17.1.0.Alternatively, users who wish to remain on older Java versions should build their own Derby distribution from one of the release families to which the fix was backported: 10.16, 10.15, and 10.14. Those are the releases which correspond, respectively, with Java LTS versions 17, 11, and 8.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/derby-10.9.1.0.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-26049",
+      "severity": 5.3,
+      "description": "Jetty is a java based web server and servlet engine. Nonstandard cookie parsing in Jetty may allow an attacker to smuggle cookies within other cookies, or otherwise perform unintended behavior by tampering with the cookie parsing mechanism. If Jetty sees a cookie VALUE that starts with `\"` (double quote), it will continue to read the cookie string until it sees a closing quote -- even if a semicolon is encountered. So, a cookie header such as: `DISPLAY_LANGUAGE=\"b; JSESSIONID=1337; c=d\"` will be parsed as one cookie, with the name DISPLAY_LANGUAGE and a value of b; JSESSIONID=1337; c=d instead of 3 separate cookies. This has security implications because if, say, JSESSIONID is an HttpOnly cookie, and the DISPLAY_LANGUAGE cookie value is rendered on the page, an attacker can smuggle the JSESSIONID cookie into the DISPLAY_LANGUAGE cookie and thereby exfiltrate it. This is significant when an intermediary is enacting some policy based on cookies, so a smuggled cookie can bypass that policy yet still be seen by the Jetty server or its logging system. This issue has been addressed in versions 9.4.51, 10.0.14, 11.0.14, and 12.0.0.beta0 and users are advised to upgrade. There are no known workarounds for this issue. Exploitable: YES Introduced in: 7.0.0.M0 Resolved in: 9.4.51.v20230217 Patch mandate: NO Discovered by: - Sourced from: NVD, OSV Description: Jetty is a java based web server and servlet engine. Nonstandard cookie parsing in Jetty may allow an attacker to smuggle cookies within other cookies, or otherwise perform unintended behavior by tampering with the cookie parsing mechanism. If Jetty sees a cookie VALUE that starts with `\"` (double quote), it will continue to read the cookie string until it sees a closing quote -- even if a semicolon is encountered. So, a cookie header such as: `DISPLAY_LANGUAGE=\"b; JSESSIONID=1337; c=d\"` will be parsed as one cookie, with the name DISPLAY_LANGUAGE and a value of b; JSESSIONID=1337; c=d instead of 3 separate cookies. This has security implications because if, say, JSESSIONID is an HttpOnly cookie, and the DISPLAY_LANGUAGE cookie value is rendered on the page, an attacker can smuggle the JSESSIONID cookie into the DISPLAY_LANGUAGE cookie and thereby exfiltrate it. This is significant when an intermediary is enacting some policy based on cookies, so a smuggled cookie can bypass that policy yet still be seen by the Jetty server or its logging system. This issue has been addressed in versions 9.4.51, 10.0.14, 11.0.14, and 12.0.0.beta0 and users are advised to upgrade. There are no known workarounds for this issue. Exploitable: YES Introduced in: 9.0.0.v20130308 Resolved in: 9.4.47 Patch mandate: NO Discovered by: - Sourced from: NVD, OSV Description: Jetty is a java based web server and servlet engine. Nonstandard cookie parsing in Jetty may allow an attacker to smuggle cookies within other cookies, or otherwise perform unintended behavior by tampering with the cookie parsing mechanism. If Jetty sees a cookie VALUE that starts with `\"` (double quote), it will continue to read the cookie string until it sees a closing quote -- even if a semicolon is encountered. So, a cookie header such as: `DISPLAY_LANGUAGE=\"b; JSESSIONID=1337; c=d\"` will be parsed as one cookie, with the name DISPLAY_LANGUAGE and a value of b; JSESSIONID=1337; c=d instead of 3 separate cookies. This has security implications because if, say, JSESSIONID is an HttpOnly cookie, and the DISPLAY_LANGUAGE cookie value is rendered on the page, an attacker can smuggle the JSESSIONID cookie into the DISPLAY_LANGUAGE cookie and thereby exfiltrate it. This is significant when an intermediary is enacting some policy based on cookies, so a smuggled cookie can bypass that policy yet still be seen by the Jetty server or its logging system. This issue has been addressed in versions 9.4.51, 10.0.14, 11.0.14, and 12.0.0.beta0 and users are advised to upgrade. There are no known workarounds for this issue. Exploitable: YES Introduced in: 9.4.39.v20210325 Resolved in: 9.4.43 Patch mandate: NO Discovered by: - Sourced from: NVD, OSV Description: Jetty is a java based web server and servlet engine. Nonstandard cookie parsing in Jetty may allow an attacker to smuggle cookies within other cookies, or otherwise perform unintended behavior by tampering with the cookie parsing mechanism. If Jetty sees a cookie VALUE that starts with `\"` (double quote), it will continue to read the cookie string until it sees a closing quote -- even if a semicolon is encountered. So, a cookie header such as: `DISPLAY_LANGUAGE=\"b; JSESSIONID=1337; c=d\"` will be parsed as one cookie, with the name DISPLAY_LANGUAGE and a value of b; JSESSIONID=1337; c=d instead of 3 separate cookies. This has security implications because if, say, JSESSIONID is an HttpOnly cookie, and the DISPLAY_LANGUAGE cookie value is rendered on the page, an attacker can smuggle the JSESSIONID cookie into the DISPLAY_LANGUAGE cookie and thereby exfiltrate it. This is significant when an intermediary is enacting some policy based on cookies, so a smuggled cookie can bypass that policy yet still be seen by the Jetty server or its logging system. This issue has been addressed in versions 9.4.51, 10.0.14, 11.0.14, and 12.0.0.beta0 and users are advised to upgrade. There are no known workarounds for this issue. Exploitable: YES Introduced in: 9.4.39.v20210325 Resolved in: 9.4.51.v20230217 Patch mandate: NO Discovered by: - Sourced from: NVD, OSV Description: Jetty is a java based web server and servlet engine. Nonstandard cookie parsing in Jetty may allow an attacker to smuggle cookies within other cookies, or otherwise perform unintended behavior by tampering with the cookie parsing mechanism. If Jetty sees a cookie VALUE that starts with `\"` (double quote), it will continue to read the cookie string until it sees a closing quote -- even if a semicolon is encountered. So, a cookie header such as: `DISPLAY_LANGUAGE=\"b; JSESSIONID=1337; c=d\"` will be parsed as one cookie, with the name DISPLAY_LANGUAGE and a value of b; JSESSIONID=1337; c=d instead of 3 separate cookies. This has security implications because if, say, JSESSIONID is an HttpOnly cookie, and the DISPLAY_LANGUAGE cookie value is rendered on the page, an attacker can smuggle the JSESSIONID cookie into the DISPLAY_LANGUAGE cookie and thereby exfiltrate it. This is significant when an intermediary is enacting some policy based on cookies, so a smuggled cookie can bypass that policy yet still be seen by the Jetty server or its logging system. This issue has been addressed in versions 9.4.51, 10.0.14, 11.0.14, and 12.0.0.beta0 and users are advised to upgrade. There are no known workarounds for this issue. Exploitable: YES Introduced in: 9.4.41.v20210516 Resolved in: 9.4.51.v20230217 Patch mandate: NO Discovered by: - Sourced from: NVD, OSV Description: Jetty is a java based web server and servlet engine. Nonstandard cookie parsing in Jetty may allow an attacker to smuggle cookies within other cookies, or otherwise perform unintended behavior by tampering with the cookie parsing mechanism. If Jetty sees a cookie VALUE that starts with `\"` (double quote), it will continue to read the cookie string until it sees a closing quote -- even if a semicolon is encountered. So, a cookie header such as: `DISPLAY_LANGUAGE=\"b; JSESSIONID=1337; c=d\"` will be parsed as one cookie, with the name DISPLAY_LANGUAGE and a value of b; JSESSIONID=1337; c=d instead of 3 separate cookies. This has security implications because if, say, JSESSIONID is an HttpOnly cookie, and the DISPLAY_LANGUAGE cookie value is rendered on the page, an attacker can smuggle the JSESSIONID cookie into the DISPLAY_LANGUAGE cookie and thereby exfiltrate it. This is significant when an intermediary is enacting some policy based on cookies, so a smuggled cookie can bypass that policy yet still be seen by the Jetty server or its logging system. This issue has been addressed in versions 9.4.51, 10.0.14, 11.0.14, and 12.0.0.beta0 and users are advised to upgrade. There are no known workarounds for this issue.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-io-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/http2-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-io-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-rewrite-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/http2-hpack-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-alpn-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-http-client-transport-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-client/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-alpn-java-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-http-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-util-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-http-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/start.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-util-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-xml-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-deploy-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-webapp/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-alpn-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-http-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-http-client-transport-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-client/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-io-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/metrics-jetty9-4.1.5.jar <- via org.eclipse.jetty:jetty-server/9.4.27.v20200227 (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-util-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-alpn-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-webapp-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-hpack-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-hpack-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-jmx-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-security-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-servlets-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-webapp/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-2976",
+      "severity": 7.1,
+      "description": "Use of Java's default temporary directory for file creation in `FileBackedOutputStream` in Google Guava versions 1.0 to 31.1 on Unix systems and Android Ice Cream Sandwich allows other users and apps on the machine with access to the default Java temporary directory to be able to access the files created by the class.Even though the security vulnerability is fixed in version 32.0.0, we recommend using version 32.0.1 as version 32.0.0 breaks some functionality under Windows.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/junit4-ant-2.7.2.jar <- via Guava: Google Core Libraries for Java/25.0-jre (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/guava-25.1-jre.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-cloud-storage-1.113.14.jar <- via com.google.guava:guava/30.1-android (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-31582",
+      "severity": 7.5,
+      "description": "jose4j before v0.9.3 allows attackers to set a low iteration count of 1000 or less.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jose4j-0.6.5.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-32697",
+      "severity": 9.8,
+      "description": "SQLite JDBC is a library for accessing and creating SQLite database files in Java. Sqlite-jdbc addresses a remote code execution vulnerability via JDBC URL. This issue impacting versions 3.6.14.1 through 3.41.2.1 and has been fixed in version 3.41.2.2.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.xerial:sqlite-jdbc/3.30.1 (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-33202",
+      "severity": 5.5,
+      "description": "Bouncy Castle for Java before 1.73 contains a potential Denial of Service (DoS) issue within the Bouncy Castle org.bouncycastle.openssl.PEMParser class. This class parses OpenSSL PEM encoded streams containing X.509 certificates, PKCS8 encoded keys, and PKCS7 objects. Parsing a file that has crafted ASN.1 data through the PEMParser causes an OutOfMemoryError, which can enable a denial of service attack. (For users of the FIPS Java API: BC-FJA 1.0.2.3 and earlier are affected; BC-FJA 1.0.2.4 is fixed.) Exploitable: YES Introduced in: 1.47 Resolved in: unknown Patch mandate: NO Discovered by: - Sourced from: NVD, OSV Description: Bouncy Castle for Java before 1.73 contains a potential Denial of Service (DoS) issue within the Bouncy Castle org.bouncycastle.openssl.PEMParser class. This class parses OpenSSL PEM encoded streams containing X.509 certificates, PKCS8 encoded keys, and PKCS7 objects. Parsing a file that has crafted ASN.1 data through the PEMParser causes an OutOfMemoryError, which can enable a denial of service attack. (For users of the FIPS Java API: BC-FJA 1.0.2.3 and earlier are affected; BC-FJA 1.0.2.4 is fixed.)",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.bouncycastle:bcprov-jdk15on/1.65 (package)",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/bcpkix-jdk15on-1.65.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/jackcess-encrypt-3.0.0.jar <- via org.bouncycastle:bcprov-jdk15on/1.60 (package)",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/bcprov-jdk15on-1.65.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-34453",
+      "severity": 7.5,
+      "description": "snappy-java is a fast compressor/decompressor for Java. Due to unchecked multiplications, an integer overflow may occur in versions prior to 1.1.10.1, causing a fatal error.The function `shuffle(int[] input)` in the file `BitShuffle.java` receives an array of integers and applies a bit shuffle on it. It does so by multiplying the length by 4 and passing it to the natively compiled shuffle function. Since the length is not tested, the multiplication by four can cause an integer overflow and become a smaller value than the true size, or even zero or negative. In the case of a negative value, a `java.lang.NegativeArraySizeException` exception will raise, which can crash the program. In a case of a value that is zero or too small, the code that afterwards references the shuffled array will assume a bigger size of the array, which might cause exceptions such as `java.lang.ArrayIndexOutOfBoundsException`.The same issue exists also when using the `shuffle` functions that receive a double, float, long and short, each using a different multiplier that may cause the same issue.Version 1.1.10.1 contains a patch for this vulnerability.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/snappy-java-1.1.7.6.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/snappy-java-1.1.7.6.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-34454",
+      "severity": 7.5,
+      "description": "snappy-java is a fast compressor/decompressor for Java. Due to unchecked multiplications, an integer overflow may occur in versions prior to 1.1.10.1, causing an unrecoverable fatal error.The function `compress(char[] input)` in the file `Snappy.java` receives an array of characters and compresses it. It does so by multiplying the length by 2 and passing it to the rawCompress` function.Since the length is not tested, the multiplication by two can cause an integer overflow and become negative. The rawCompress function then uses the received length and passes it to the natively compiled maxCompressedLength function, using the returned value to allocate a byte array.Since the maxCompressedLength function treats the length as an unsigned integer, it doesn’t care that it is negative, and it returns a valid value, which is casted to a signed integer by the Java engine. If the result is negative, a `java.lang.NegativeArraySizeException` exception will be raised while trying to allocate the array `buf`. On the other side, if the result is positive, the `buf` array will successfully be allocated, but its size might be too small to use for the compression, causing a fatal Access Violation error.The same issue exists also when using the `compress` functions that receive double, float, int, long and short, each using a different multiplier that may cause the same issue. The issue most likely won’t occur when using a byte array, since creating a byte array of size 0x80000000 (or any other negative value) is impossible in the first place.Version 1.1.10.1 contains a patch for this issue.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/snappy-java-1.1.7.6.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/snappy-java-1.1.7.6.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-34455",
+      "severity": 7.5,
+      "description": "snappy-java is a fast compressor/decompressor for Java. Due to use of an unchecked chunk length, an unrecoverable fatal error can occur in versions prior to 1.1.10.1.The code in the function hasNextChunk in the fileSnappyInputStream.java checks if a given stream has more chunks to read. It does that by attempting to read 4 bytes. If it wasn’t possible to read the 4 bytes, the function returns false. Otherwise, if 4 bytes were available, the code treats them as the length of the next chunk. In the case that the `compressed` variable is null, a byte array is allocated with the size given by the input data. Since the code doesn’t test the legality of the `chunkSize` variable, it is possible to pass a negative number (such as 0xFFFFFFFF which is -1), which will cause the code to raise a `java.lang.NegativeArraySizeException` exception. A worse case would happen when passing a huge positive value (such as 0x7FFFFFFF), which would raise the fatal `java.lang.OutOfMemoryError` error.Version 1.1.10.1 contains a patch for this issue.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/snappy-java-1.1.7.6.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/snappy-java-1.1.7.6.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-34462",
+      "severity": 6.5,
+      "description": "Netty is an asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers & clients. The `SniHandler` can allocate up to 16MB of heap for each channel during the TLS handshake. When the handler or the channel does not have an idle timeout, it can be used to make a TCP server using the `SniHandler` to allocate 16MB of heap. The `SniHandler` class is a handler that waits for the TLS handshake to configure a `SslHandler` according to the indicated server name by the `ClientHello` record. For this matter it allocates a `ByteBuf` using the value defined in the `ClientHello` record. Normally the value of the packet should be smaller than the handshake packet but there are not checks done here and the way the code is written, it is possible to craft a packet that makes the `SslClientHelloHandler`. This vulnerability has been fixed in version 4.1.94.Final.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-handler-4.1.50.Final.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-handler-4.1.50.Final.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-36478",
+      "severity": 7.5,
+      "description": "Eclipse Jetty provides a web server and servlet container. In versions 11.0.0 through 11.0.15, 10.0.0 through 10.0.15, and 9.0.0 through 9.4.52, an integer overflow in `MetaDataBuilder.checkSize` allows for HTTP/2 HPACK header values toexceed their size limit. `MetaDataBuilder.java` determines if a header name or value exceeds the size limit, and throws an exception if the limit is exceeded. However, when length is very large and huffman is true, the multiplication by 4 in line 295will overflow, and length will become negative. `(_size+length)` will now be negative, and the check on line 296 will not be triggered. Furthermore, `MetaDataBuilder.checkSize` allows for user-entered HPACK header value sizes to be negative, potentially leading to a very large buffer allocation later on when the user-entered size is multiplied by 2. This means that if a user provides a negative length value (or, more precisely, a length value which, when multiplied by the 4/3 fudge factor, is negative), and this length value is a very large positive number when multiplied by 2, then the user can cause a very large buffer to be allocated on the server. Users of HTTP/2 can be impacted by a remote denial of service attack. The issue has been fixed in versions 11.0.16, 10.0.16, and 9.4.53. There are no known workarounds.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/lib/http2-hpack-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/http2-common-9.4.41.v20210516.jar <- via org.eclipse.jetty.http2:http2-hpack/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-common-9.4.41.v20210516.jar <- via org.eclipse.jetty.http2:http2-hpack/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-hpack-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-hpack-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-common-9.4.41.v20210516.jar <- via org.eclipse.jetty.http2:http2-hpack/9.4.41.v20210516 (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-36479",
+      "severity": 4.3,
+      "description": "Eclipse Jetty Canonical Repository is the canonical repository for the Jetty project. Users of the CgiServlet with a very specific command structure may have the wrong command executed. If a user sends a request to a org.eclipse.jetty.servlets.CGI Servlet for a binary with a space in its name, the servlet will escape the command by wrapping it in quotation marks. This wrapped command, plus an optional command prefix, will then be executed through a call to Runtime.exec. If the original binary name provided by the user contains a quotation mark followed by a space, the resulting command line will contain multiple tokens instead of one. This issue was patched in version 9.4.52, 10.0.16, 11.0.16 and 12.0.0-beta2. Exploitable: YES Introduced in: 9.4.39.v20210325 Resolved in: 9.4.43 Patch mandate: NO Discovered by: - Sourced from: NVD, OSV Description: Eclipse Jetty Canonical Repository is the canonical repository for the Jetty project. Users of the CgiServlet with a very specific command structure may have the wrong command executed. If a user sends a request to a org.eclipse.jetty.servlets.CGI Servlet for a binary with a space in its name, the servlet will escape the command by wrapping it in quotation marks. This wrapped command, plus an optional command prefix, will then be executed through a call to Runtime.exec. If the original binary name provided by the user contains a quotation mark followed by a space, the resulting command line will contain multiple tokens instead of one. This issue was patched in version 9.4.52, 10.0.16, 11.0.16 and 12.0.0-beta2.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-deploy-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-webapp/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-webapp-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-servlets-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-webapp/9.4.41.v20210516 (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-39913",
+      "severity": 8.8,
+      "description": "Deserialization of Untrusted Data, Improper Input Validation vulnerability in Apache UIMA Java SDK, Apache UIMA Java SDK, Apache UIMA Java SDK, Apache UIMA Java SDK.This issue affects Apache UIMA Java SDK: before 3.5.0.Users are recommended to upgrade to version 3.5.0, which fixes the issue.There are several locations in the code where serialized Java objects are deserialized without verifying the data. This affects in particular: * the deserialization of a Java-serialized CAS, but also other binary CAS formats that include TSI information using the CasIOUtils class; * the CAS Editor Eclipse plugin which uses the the CasIOUtils class to load data; * the deserialization of a Java-serialized CAS of the Vinci Analysis Engine service which can receive using Java-serialized CAS objects over network connections; * the CasAnnotationViewerApplet and the CasTreeViewerApplet; * the checkpointing feature of the CPE module.Note that the UIMA framework by default does not start any remotely accessible services (i.e. Vinci) that would be vulnerable to this issue. A user or developer would need to make an active choice to start such a service. However, users or developers may use the CasIOUtils in their own applications and services to parse serialized CAS data. They are affected by this issue unless they ensure that the data passed to CasIOUtils is not a serialized Java object.When using Vinci or using CasIOUtils in own services/applications, the unrestricted deserialization of Java-serialized CAS files may allow arbitrary (remote) code execution.As a remedy, it is possible to set up a global or context-specific ObjectInputFilter (cf. https://openjdk.org/jeps/290 and https://openjdk.org/jeps/415 ) if running UIMA on a Java version that supports it. Note that Java 1.8 does not support the ObjectInputFilter, so there is no remedy when running on this out-of-support platform. An upgrade to a recent Java version is strongly recommended if you need to secure an UIMA version that is affected by this issue.To mitigate the issue on a Java 9+ platform, you can configure a filter pattern through the \"jdk.serialFilter\" system property using a semicolon as a separator:To allow deserializing Java-serialized binary CASes, add the classes: * org.apache.uima.cas.impl.CASCompleteSerializer * org.apache.uima.cas.impl.CASMgrSerializer * org.apache.uima.cas.impl.CASSerializer * java.lang.StringTo allow deserializing CPE Checkpoint data, add the following classes (and any custom classes your application uses to store its checkpoints): * org.apache.uima.collection.impl.cpm.CheckpointData * org.apache.uima.util.ProcessTrace * org.apache.uima.util.impl.ProcessTrace_impl * org.apache.uima.collection.base_cpm.SynchPointMake sure to use \"!*\" as the final component to the filter pattern to disallow deserialization of any classes not listed in the pattern.Apache UIMA 3.5.0 uses tightly scoped ObjectInputFilters when reading Java-serialized data depending on the type of data being expected. Configuring a global filter is not necessary with this version.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.apache.uima:uimaj-core/3.1.1 (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-41900",
+      "severity": 4.3,
+      "description": "Jetty is a Java based web server and servlet engine. Versions 9.4.21 through 9.4.51, 10.0.15, and 11.0.15 are vulnerable to weak authentication. If a Jetty `OpenIdAuthenticator` uses the optional nested `LoginService`, and that `LoginService` decides to revoke an already authenticated user, then the current request will still treat the user as authenticated. The authentication is then cleared from the session and subsequent requests will not be treated as authenticated. So a request on a previously authenticated session could be allowed to bypass authentication after it had been rejected by the `LoginService`. This impacts usages of the jetty-openid which have configured a nested `LoginService` and where that `LoginService` will is capable of rejecting previously authenticated users. Versions 9.4.52, 10.0.16, and 11.0.16 have a patch for this issue. Exploitable: YES Introduced in: 9.4.27.v20200227 Resolved in: 9.4.37 Patch mandate: NO Discovered by: - Sourced from: NVD, OSV Description: Jetty is a Java based web server and servlet engine. Versions 9.4.21 through 9.4.51, 10.0.15, and 11.0.15 are vulnerable to weak authentication. If a Jetty `OpenIdAuthenticator` uses the optional nested `LoginService`, and that `LoginService` decides to revoke an already authenticated user, then the current request will still treat the user as authenticated. The authentication is then cleared from the session and subsequent requests will not be treated as authenticated. So a request on a previously authenticated session could be allowed to bypass authentication after it had been rejected by the `LoginService`. This impacts usages of the jetty-openid which have configured a nested `LoginService` and where that `LoginService` will is capable of rejecting previously authenticated users. Versions 9.4.52, 10.0.16, and 11.0.16 have a patch for this issue. Exploitable: YES Introduced in: 9.4.39.v20210325 Resolved in: 9.4.43 Patch mandate: NO Discovered by: - Sourced from: NVD, OSV Description: Jetty is a Java based web server and servlet engine. Versions 9.4.21 through 9.4.51, 10.0.15, and 11.0.15 are vulnerable to weak authentication. If a Jetty `OpenIdAuthenticator` uses the optional nested `LoginService`, and that `LoginService` decides to revoke an already authenticated user, then the current request will still treat the user as authenticated. The authentication is then cleared from the session and subsequent requests will not be treated as authenticated. So a request on a previously authenticated session could be allowed to bypass authentication after it had been rejected by the `LoginService`. This impacts usages of the jetty-openid which have configured a nested `LoginService` and where that `LoginService` will is capable of rejecting previously authenticated users. Versions 9.4.52, 10.0.16, and 11.0.16 have a patch for this issue. Exploitable: YES Introduced in: 9.4.41.v20210516 Resolved in: 9.4.52 Patch mandate: NO Discovered by: - Sourced from: NVD, OSV Description: Jetty is a Java based web server and servlet engine. Versions 9.4.21 through 9.4.51, 10.0.15, and 11.0.15 are vulnerable to weak authentication. If a Jetty `OpenIdAuthenticator` uses the optional nested `LoginService`, and that `LoginService` decides to revoke an already authenticated user, then the current request will still treat the user as authenticated. The authentication is then cleared from the session and subsequent requests will not be treated as authenticated. So a request on a previously authenticated session could be allowed to bypass authentication after it had been rejected by the `LoginService`. This impacts usages of the jetty-openid which have configured a nested `LoginService` and where that `LoginService` will is capable of rejecting previously authenticated users. Versions 9.4.52, 10.0.16, and 11.0.16 have a patch for this issue. Exploitable: YES Introduced in: 9.4.41.v20210516 Resolved in: 9.4.52.v20230823 Patch mandate: NO Discovered by: - Sourced from: NVD, OSV Description: Jetty is a Java based web server and servlet engine. Versions 9.4.21 through 9.4.51, 10.0.15, and 11.0.15 are vulnerable to weak authentication. If a Jetty `OpenIdAuthenticator` uses the optional nested `LoginService`, and that `LoginService` decides to revoke an already authenticated user, then the current request will still treat the user as authenticated. The authentication is then cleared from the session and subsequent requests will not be treated as authenticated. So a request on a previously authenticated session could be allowed to bypass authentication after it had been rejected by the `LoginService`. This impacts usages of the jetty-openid which have configured a nested `LoginService` and where that `LoginService` will is capable of rejecting previously authenticated users. Versions 9.4.52, 10.0.16, and 11.0.16 have a patch for this issue.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-io-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/http2-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-io-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-rewrite-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/http2-hpack-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-alpn-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-alpn-java-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-http-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-util-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-http-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/start.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-util-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-xml-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-deploy-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-webapp/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-alpn-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-http-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-io-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/metrics-jetty9-4.1.5.jar <- via org.eclipse.jetty:jetty-server/9.4.27.v20200227 (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-util-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-alpn-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-webapp-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-hpack-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-hpack-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-jmx-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-security-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-servlets-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-webapp/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-43642",
+      "severity": 7.5,
+      "description": "snappy-java is a Java port of the snappy, a fast C++ compresser/decompresser developed by Google. The SnappyInputStream was found to be vulnerable to Denial of Service (DoS) attacks when decompressing data with a too large chunk size. Due to missing upper bound check on chunk length, an unrecoverable fatal error can occur. All versions of snappy-java including the latest released version 1.1.10.3 are vulnerable to this issue. A fix has been introduced in commit `9f8c3cf74` which will be included in the 1.1.10.4 release. Users are advised to upgrade. Users unable to upgrade should only accept compressed data from trusted sources.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/snappy-java-1.1.7.6.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/snappy-java-1.1.7.6.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-44487",
+      "severity": 7.5,
+      "description": "The HTTP/2 protocol allows a denial of service (server resource consumption) because request cancellation can reset many streams quickly, as exploited in the wild in August through October 2023. Exploitable: YES (MALWARE) Introduced in: 9.3.0 Resolved in: 9.4.53 Patch mandate: YES (MANDATORY) Discovered by: - Sourced from: KEV, NVD, OSV Description: The HTTP/2 protocol allows a denial of service (server resource consumption) because request cancellation can reset many streams quickly, as exploited in the wild in August through October 2023.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/lib/http2-server-9.4.41.v20210516.jar <- via org.eclipse.jetty.http2:http2-common/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/http2-common-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-common-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-client-9.4.41.v20210516.jar <- via org.eclipse.jetty.http2:http2-common/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-client-9.4.41.v20210516.jar <- via org.eclipse.jetty.http2:http2-common/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-common-9.4.41.v20210516.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-44981",
+      "severity": 9.1,
+      "description": "Authorization Bypass Through User-Controlled Key vulnerability in Apache ZooKeeper. If SASL Quorum Peer authentication is enabled in ZooKeeper (quorum.auth.enableSasl=true), the authorization is done by verifying that the instance part in SASL authentication ID is listed in zoo.cfg server list. The instance part in SASL auth ID is optional and if it's missing, like 'eve@EXAMPLE.COM', the authorization check will be skipped. As a result an arbitrary endpoint could join the cluster and begin propagating counterfeit changes to the leader, essentially giving it complete read-write access to the data tree. Quorum Peer authentication is not enabled by default.Users are recommended to upgrade to version 3.9.1, 3.8.3, 3.7.2, which fixes the issue.Alternately ensure the ensemble election/quorum communication is protected by a firewall as this will mitigate the issue.See the documentation for more details on correct cluster administration.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/zookeeper-3.6.2.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/zookeeper-3.6.2.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-46120",
+      "severity": 7.5,
+      "description": "The RabbitMQ Java client library allows Java and JVM-based applications to connect to and interact with RabbitMQ nodes. `maxBodyLebgth` was not used when receiving Message objects. Attackers could send a very large Message causing a memory overflow and triggering an OOM Error. Users of RabbitMQ may suffer from DoS attacks from RabbitMQ Java client which will ultimately exhaust the memory of the consumer. This vulnerability was patched in version 5.18.0.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/lib/metrics-graphite-4.1.5.jar <- via com.rabbitmq:amqp-client/5.5.3 (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-50291",
+      "severity": 7.5,
+      "description": "Insufficiently Protected Credentials vulnerability in Apache Solr.This issue affects Apache Solr: from 6.0.0 through 8.11.2, from 9.0.0 before 9.3.0.One of the two endpoints that publishes the Solr process' Java system properties, /admin/info/properties, was only setup to hide system properties that had \"password\" contained in the name.There are a number of sensitive system properties, such as \"basicauth\" and \"aws.secretKey\" do not contain \"password\", thus their values were published via the \"/admin/info/properties\" endpoint.This endpoint populates the list of System Properties on the home screen of the Solr Admin page, making the exposed credentials visible in the UI. This /admin/info/properties endpoint is protected under the \"config-read\" permission.Therefore, Solr Clouds with Authorization enabled will only be vulnerable through logged-in users that have the \"config-read\" permission.Users are recommended to upgrade to version 9.3.0 or 8.11.3, which fixes the issue.A single option now controls hiding Java system property for all endpoints, \"-Dsolr.hiddenSysProps\".By default all known sensitive properties are hidden (including \"-Dbasicauth\"), as well as any property with a name containing \"secret\" or \"password\".Users who cannot upgrade can also use the following Java system property to fix the issue: '-Dsolr.redaction.system.pattern=.*(password|secret|basicauth).*'",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-50292",
+      "severity": 7.5,
+      "description": "Incorrect Permission Assignment for Critical Resource, Improper Control of Dynamically-Managed Code Resources vulnerability in Apache Solr.This issue affects Apache Solr: from 8.10.0 through 8.11.2, from 9.0.0 before 9.3.0.The Schema Designer was introduced to allow users to more easily configure and test new Schemas and configSets.However, when the feature was created, the \"trust\" (authentication) of these configSets was not considered.External library loading is only available to configSets that are \"trusted\" (created by authenticated users), thus non-authenticated users are unable to perform Remote Code Execution.Since the Schema Designer loaded configSets without taking their \"trust\" into account, configSets that were created by unauthenticated users were allowed to load external libraries when used in the Schema Designer.Users are recommended to upgrade to version 9.3.0, which fixes the issue.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-50298",
+      "severity": 7.5,
+      "description": "Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Solr.This issue affects Apache Solr: from 6.0.0 through 8.11.2, from 9.0.0 before 9.4.1.Solr Streaming Expressions allows users to extract data from other Solr Clouds, using a \"zkHost\" parameter.When original SolrCloud is setup to use ZooKeeper credentials and ACLs, they will be sent to whatever \"zkHost\" the user provides.An attacker could setup a server to mock ZooKeeper, that accepts ZooKeeper requests with credentials and ACLs and extracts the sensitive information,then send a streaming expression using the mock server's address in \"zkHost\". Streaming Expressions are exposed via the \"/streaming\" handler, with \"read\" permissions.Users are recommended to upgrade to version 8.11.3 or 9.4.1, which fix the issue.From these versions on, only zkHost values that have the same server address (regardless of chroot), will use the given ZooKeeper credentials and ACLs when connecting.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-50386",
+      "severity": 8.8,
+      "description": "Improper Control of Dynamically-Managed Code Resources, Unrestricted Upload of File with Dangerous Type, Inclusion of Functionality from Untrusted Control Sphere vulnerability in Apache Solr.This issue affects Apache Solr: from 6.0.0 through 8.11.2, from 9.0.0 before 9.4.1.In the affected versions, Solr ConfigSets accepted Java jar and class files to be uploaded through the ConfigSets API.When backing up Solr Collections, these configSet files would be saved to disk when using the LocalFileSystemRepository (the default for backups).If the backup was saved to a directory that Solr uses in its ClassPath/ClassLoaders, then the jar and class files would be available to use with any ConfigSet, trusted or untrusted.When Solr is run in a secure way (Authorization enabled), as is strongly suggested, this vulnerability is limited to extending the Backup permissions with the ability to add libraries.Users are recommended to upgrade to version 8.11.3 or 9.4.1, which fix the issue.In these versions, the following protections have been added: * Users are no longer able to upload files to a configSet that could be executed via a Java ClassLoader. * The Backup API restricts saving backups to directories that are used in the ClassLoader.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-51074",
+      "severity": 5.3,
+      "description": "json-path v2.8.0 was discovered to contain a stack overflow via the Criteria.parse() method.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/json-path-2.4.0.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2023-51775",
+      "severity": 6.5,
+      "description": "The jose4j component before 0.9.4 for Java allows attackers to cause a denial of service (CPU consumption) via a large p2c (aka PBES2 Count) value.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jose4j-0.6.5.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2024-21634",
+      "severity": 7.5,
+      "description": "Amazon Ion is a Java implementation of the Ion data notation. Prior to version 1.10.5, a potential denial-of-service issue exists in `ion-java` for applications that use `ion-java` to deserialize Ion text encoded data, or deserialize Ion text or binary encoded data into the `IonValue` model and then invoke certain `IonValue` methods on that in-memory representation. An actor could craft Ion data that, when loaded by the affected application and/or processed using the `IonValue` model, results in a `StackOverflowError` originating from the `ion-java` library. The patch is included in `ion-java` 1.10.5. As a workaround, do not load data which originated from an untrusted source or that could have been tampered with.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/s3-repository/lib/ion-java-1.0.2.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2024-22201",
+      "severity": 7.5,
+      "description": "Jetty is a Java based web server and servlet engine. An HTTP/2 SSL connection that is established and TCP congested will be leaked when it times out. An attacker can cause many connections to end up in this state, and the server may run out of file descriptors, eventually causing the server to stop accepting new connections from valid clients. The vulnerability is patched in 9.4.54, 10.0.20, 11.0.20, and 12.0.6.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/lib/http2-server-9.4.41.v20210516.jar <- via org.eclipse.jetty.http2:http2-common/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/http2-common-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-common-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-client-9.4.41.v20210516.jar <- via org.eclipse.jetty.http2:http2-common/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-client-9.4.41.v20210516.jar <- via org.eclipse.jetty.http2:http2-common/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-common-9.4.41.v20210516.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2024-23454",
+      "severity": 6.2,
+      "description": "Apache Hadoop’s RunJar.run() does not set permissions for temporary directory by default. If sensitive data will be present in this file, all the other local users may be able to view the content.This is because, on unix-like systems, the system temporary directory isshared between all local users. As such, files written in this directory,without setting the correct posix permissions explicitly, may be viewableby all other local users.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/hadoop-common-3.2.2.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2024-29131",
+      "severity": 7.3,
+      "description": "Out-of-bounds Write vulnerability in Apache Commons Configuration.This issue affects Apache Commons Configuration: from 2.0 before 2.10.1.Users are recommended to upgrade to version 2.10.1, which fixes the issue.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-configuration2-2.1.1.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2024-29857",
+      "severity": 7.5,
+      "description": "An issue was discovered in ECCurve.java and ECCurve.cs in Bouncy Castle Java (BC Java) before 1.78, BC Java LTS before 2.73.6, BC-FJA before 1.0.2.5, and BC C# .Net before 2.3.1. Importing an EC certificate with crafted F2m parameters can lead to excessive CPU consumption during the evaluation of the curve parameters.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.bouncycastle:bcprov-jdk15on/1.65 (package)",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/jackcess-encrypt-3.0.0.jar <- via org.bouncycastle:bcprov-jdk15on/1.60 (package)",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/bcprov-jdk15on-1.65.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2024-30172",
+      "severity": 7.5,
+      "description": "An issue was discovered in Bouncy Castle Java Cryptography APIs before 1.78. An Ed25519 verification code infinite loop can occur via a crafted signature and public key.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.bouncycastle:bcprov-jdk15on/1.65 (package)",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/jackcess-encrypt-3.0.0.jar <- via org.bouncycastle:bcprov-jdk15on/1.60 (package)",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/bcprov-jdk15on-1.65.jar"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2024-6763",
+      "severity": 5.3,
+      "description": "Eclipse Jetty is a lightweight, highly scalable, Java-based web server and Servlet engine . It includes a utility class, HttpURI, for URI/URL parsing.The HttpURI class does insufficient validation on the authority segment of a URI. However the behaviour of HttpURI differs from the common browsers in how it handles a URI that would be considered invalid if fully validated against the RRC. Specifically HttpURI and the browser may differ on the value of the host extracted from an invalid URI and thus a combination of Jetty and a vulnerable browser may be vulnerable to a open redirect attack or to a SSRF attack if the URI is used after passing validation checks.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/lib/http2-hpack-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-http-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-http-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-http-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-hpack-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-hpack-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-servlets-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)"
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "name": "CVE-2024-8184",
+      "severity": 6.5,
+      "description": "There exists a security vulnerability in Jetty's ThreadLimitHandler.getRemote() which can be exploited by unauthorized users to cause remote denial-of-service (DoS) attack. By repeatedly sending crafted requests, attackers can trigger OutofMemory errors and exhaust the server's memory.",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/server/lib/http2-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-rewrite-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-alpn-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/metrics-jetty9-4.1.5.jar <- via org.eclipse.jetty:jetty-server/9.4.27.v20200227 (package)",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-server-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-security-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)"
+      ]
+    },
+    {
+      "type": "malware",
+      "name": "Archive-JAR.Trojan.Strrat",
+      "suspect": false,
+      "locations": [
+        "WEB-INF/lib/strrat-1.0.0.jar/carLambo/FirstRun.class"
+      ]
+    },
+    {
+      "type": "malware",
+      "name": "ByteCode-JAVA.Exploit.Banload",
+      "suspect": false,
+      "locations": [
+        "WEB-INF/lib/strrat-1.0.0.jar/carLambo/WzodNXIRgeBkyABvwwufd.class",
+        "WEB-INF/lib/strrat-1.0.0.jar/carLambo/tfqIDcmEmgfVqfTILxYKD.class"
+      ]
+    },
+    {
+      "type": "malware",
+      "name": "ByteCode-JAVA.Trojan.StrRat",
+      "suspect": false,
+      "locations": [
+        "WEB-INF/lib/strrat-1.0.0.jar"
+      ]
+    },
+    {
+      "type": "behavior",
+      "name": "BH12130",
+      "description": "Adds attachments to e-mails. =>  Commonly triggered by the use of the \"javax.mail.internet.MimeBodyPart.attachFile\" Java method, or methods with similar functionality in other environments. ",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/dataimporthandler-extras/lib/javax.mail-1.5.1.jar/com/sun/mail/util/logging/MailHandler.class",
+        "unpacked_files/0/solr-8.10.0/contrib/dataimporthandler-extras/lib/javax.mail-1.5.1.jar/javax/mail/internet/MimeBodyPart.class",
+        "unpacked_files/0/solr-8.10.0/contrib/dataimporthandler-extras/lib/javax.mail-1.5.1.jar/javax/mail/internet/MimeMessage.class",
+        "unpacked_files/0/solr-8.10.0/contrib/dataimporthandler-extras/lib/javax.mail-1.5.1.jar"
+      ]
+    },
+    {
+      "type": "behavior",
+      "name": "BH12174",
+      "description": "Checks file permissions. =>  Commonly triggered by the use of the \"find -perm\" Shell command, or commands with similar functionality in other environments. ",
+      "locations": [
+        "unpacked_files/0/solr-8.10.0/contrib/analysis-extras/lib/opennlp-tools-1.9.2.jar/opennlp/tools/cmdline/CmdLineUtil.class",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/bcpkix-jdk15on-1.65.jar/org/bouncycastle/openssl/jcajce/JcaPKIXIdentityBuilder.class",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/fontbox-2.0.19.jar/org/apache/fontbox/util/autodetect/NativeFontDirFinder.class",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/fontbox-2.0.19.jar/org/apache/fontbox/util/autodetect/WindowsFontDirFinder.class",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/jackcess-3.0.1.jar/com/healthmarketscience/jackcess/impl/DatabaseImpl.class",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/metadata-extractor-2.13.0.jar/com/drew/metadata/file/FileSystemMetadataReader.class",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/pdfbox-2.0.19.jar/org/apache/pdfbox/pdmodel/font/FileSystemFontProvider.class",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-core-1.24.1.jar/org/apache/tika/parser/AutoDetectParserFactory.class",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/xmlbeans-3.1.0.jar/org/apache/xmlbeans/impl/tool/XSTCTester.class",
+        "unpacked_files/0/solr-8.10.0/contrib/langid/lib/opennlp-tools-1.9.2.jar/opennlp/tools/cmdline/CmdLineUtil.class",
+        "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/argparse4j-0.8.1.jar/net/sourceforge/argparse4j/impl/type/FileVerification.class",
+        "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/argparse4j-0.8.1.jar/net/sourceforge/argparse4j/internal/TerminalWidth.class",
+        "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/log4j-core-2.14.1.jar/org/apache/logging/log4j/core/config/ConfigurationSource.class",
+        "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lucene-libs/lucene-analyzers-common-8.10.0.jar/org/apache/lucene/analysis/hunspell/Dictionary.class",
+        "unpacked_files/0/solr-8.10.0/contrib/s3-repository/lib/ion-java-1.0.2.jar/software/amazon/ion/apps/BaseApp.class",
+        "unpacked_files/0/solr-8.10.0/contrib/s3-repository/lib/ion-java-1.0.2.jar/software/amazon/ion/apps/PrintApp.class",
+        "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-engine-core-2.0.jar/org/apache/velocity/runtime/resource/loader/FileResourceLoader.class",
+        "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-engine-core-2.0.jar/org/apache/velocity/util/ExtProperties.class",
+        "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-tools-generic-3.0.jar/org/apache/velocity/tools/generic/ImportSupport.class",
+        "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-tools-view-3.0.jar/org/apache/velocity/tools/view/WebappResourceLoader.class",
+        "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/core/CachingDirectoryFactory.class",
+        "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/core/SolrResourceLoader.class",
+        "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/handler/CatStream.class",
+        "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/handler/PingRequestHandler.class",
+        "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/handler/ReplicationHandler$LocalFsFileStream.class",
+        "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/handler/admin/ShowFileRequestHandler.class",
+        "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/rest/ManagedResourceStorage.class",
+        "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/util/HdfsUtil.class",
+        "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/util/SolrCLI$AuthTool.class",
+        "unpacked_files/0/solr-8.10.0/dist/solr-dataimporthandler-8.10.0.jar/org/apache/solr/handler/dataimport/FileDataSource.class",
+        "unpacked_files/0/solr-8.10.0/dist/solr-dataimporthandler-8.10.0.jar/org/apache/solr/handler/dataimport/SimplePropertiesWriter.class",
+        "unpacked_files/0/solr-8.10.0/dist/solr-test-framework-8.10.0.jar/org/apache/solr/EmbeddedSolrServerTestBase.class",
+        "unpacked_files/0/solr-8.10.0/dist/solr-test-framework-8.10.0.jar/org/apache/solr/SolrTestCase.class",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/commons-io-2.8.0.jar/org/apache/commons/io/FileUtils.class",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/commons-io-2.8.0.jar/org/apache/commons/io/file/PathUtils.class",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/commons-io-2.8.0.jar/org/apache/commons/io/filefilter/CanExecuteFileFilter.class",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/commons-io-2.8.0.jar/org/apache/commons/io/filefilter/CanReadFileFilter.class",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/commons-io-2.8.0.jar/org/apache/commons/io/filefilter/CanWriteFileFilter.class",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/commons-io-2.8.0.jar/org/apache/commons/io/filefilter/MagicNumberFileFilter.class",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/commons-io-2.8.0.jar/org/apache/commons/io/output/LockableFileWriter.class",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-client-9.4.41.v20210516.jar/org/eclipse/jetty/client/util/PathContentProvider.class",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-util-9.4.41.v20210516.jar/org/eclipse/jetty/util/MultiReleaseJarFile.class",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-util-9.4.41.v20210516.jar/org/eclipse/jetty/util/RolloverFileOutputStream.class",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-common-4.1.50.Final.jar/io/netty/util/internal/NativeLibraryLoader$NoexecVolumeDetector.class",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-common-4.1.50.Final.jar/io/netty/util/internal/NativeLibraryLoader.class",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/zookeeper-3.6.2.jar/org/apache/zookeeper/ZKUtil.class",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/zookeeper-3.6.2.jar/org/apache/zookeeper/server/persistence/FileTxnSnapLog.class",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/zookeeper-3.6.2.jar/org/apache/zookeeper/server/persistence/TxnLogToolkit.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/AbstractCvsTask.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/BuildNumber.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/Execute.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/Expand.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/Get.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/Move.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/SubAnt.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/Tar.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/Touch.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/Zip.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/email/PlainMailer.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/email/UUMailer.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/optional/EchoProperties.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/optional/Rpm.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/optional/XMLValidateTask.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/types/XMLCatalog.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/types/selectors/ReadableSelector.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/types/selectors/WritableSelector.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/types/selectors/modifiedselector/ChecksumAlgorithm.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/types/selectors/modifiedselector/DigestAlgorithm.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/types/selectors/modifiedselector/HashvalueAlgorithm.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/types/selectors/modifiedselector/PropertiesfileCache.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/util/ResourceUtils.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/util/SymbolicLinkUtils.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/randomizedtesting-runner-2.7.2.jar/com/carrotsearch/randomizedtesting/RandomizedTest.class",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lucene-libs/lucene-test-framework-8.10.0.jar/org/apache/lucene/util/TestRuleTemporaryFilesCleanup.class",
+        "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/hsqldb-2.4.0.jar/org/hsqldb/lib/RCData.class",
+        "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/hsqldb-2.4.0.jar/org/hsqldb/lib/tar/TarFileInputStream.class",
+        "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/hsqldb-2.4.0.jar/org/hsqldb/lib/tar/TarFileOutputStream.class",
+        "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/hsqldb-2.4.0.jar/org/hsqldb/lib/tar/TarGenerator$TarEntrySupplicant.class",
+        "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/hsqldb-2.4.0.jar/org/hsqldb/lib/tar/TarGenerator.class",
+        "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/hsqldb-2.4.0.jar/org/hsqldb/lib/tar/TarReader.class",
+        "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/hsqldb-2.4.0.jar/org/hsqldb/server/ServerAcl.class",
+        "unpacked_files/0/solr-8.10.0/example/exampledocs/post.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/ext/log4j-core-2.14.1.jar/org/apache/logging/log4j/core/config/ConfigurationSource.class",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-deploy-9.4.41.v20210516.jar/org/eclipse/jetty/deploy/providers/ScanningAppProvider.class",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-server-9.4.41.v20210516.jar/org/eclipse/jetty/server/session/FileSessionDataStore.class",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-servlets-9.4.41.v20210516.jar/org/eclipse/jetty/servlets/CGI.class",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-servlets-9.4.41.v20210516.jar/org/eclipse/jetty/servlets/DataRateLimitedServlet.class",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-util-9.4.41.v20210516.jar/org/eclipse/jetty/util/MultiReleaseJarFile.class",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-util-9.4.41.v20210516.jar/org/eclipse/jetty/util/RolloverFileOutputStream.class",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-webapp-9.4.41.v20210516.jar/org/eclipse/jetty/webapp/WebInfConfiguration.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-collections-3.2.2.jar/org/apache/commons/collections/ExtendedProperties.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-io-2.8.0.jar/org/apache/commons/io/FileUtils.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-io-2.8.0.jar/org/apache/commons/io/file/PathUtils.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-io-2.8.0.jar/org/apache/commons/io/filefilter/CanExecuteFileFilter.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-io-2.8.0.jar/org/apache/commons/io/filefilter/CanReadFileFilter.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-io-2.8.0.jar/org/apache/commons/io/filefilter/CanWriteFileFilter.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-io-2.8.0.jar/org/apache/commons/io/filefilter/MagicNumberFileFilter.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-io-2.8.0.jar/org/apache/commons/io/output/LockableFileWriter.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/hadoop-common-3.2.2.jar/org/apache/hadoop/fs/FileUtil.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/hadoop-common-3.2.2.jar/org/apache/hadoop/security/KDiag.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/hadoop-common-3.2.2.jar/org/apache/hadoop/security/alias/LocalJavaKeyStoreProvider.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-client-9.4.41.v20210516.jar/org/eclipse/jetty/client/util/PathContentProvider.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-util-9.4.41.v20210516.jar/org/eclipse/jetty/util/MultiReleaseJarFile.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-util-9.4.41.v20210516.jar/org/eclipse/jetty/util/RolloverFileOutputStream.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/kerb-util-1.0.1.jar/org/apache/kerby/kerberos/kerb/ccache/CredentialCache.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/kerb-util-1.0.1.jar/org/apache/kerby/kerberos/kerb/keytab/Keytab.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/lucene-analyzers-common-8.10.0.jar/org/apache/lucene/analysis/hunspell/Dictionary.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/lucene-misc-8.10.0.jar/org/apache/lucene/store/HardlinkCopyDirectoryWrapper.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-common-4.1.50.Final.jar/io/netty/util/internal/NativeLibraryLoader$NoexecVolumeDetector.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-common-4.1.50.Final.jar/io/netty/util/internal/NativeLibraryLoader.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/core/CachingDirectoryFactory.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/core/SolrResourceLoader.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/handler/CatStream.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/handler/PingRequestHandler.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/handler/ReplicationHandler$LocalFsFileStream.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/handler/admin/ShowFileRequestHandler.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/rest/ManagedResourceStorage.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/util/HdfsUtil.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/util/SolrCLI$AuthTool.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/zookeeper-3.6.2.jar/org/apache/zookeeper/ZKUtil.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/zookeeper-3.6.2.jar/org/apache/zookeeper/server/persistence/FileTxnSnapLog.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/zookeeper-3.6.2.jar/org/apache/zookeeper/server/persistence/TxnLogToolkit.class",
+        "unpacked_files/0/solr-8.10.0/server/start.jar/org/eclipse/jetty/start/FS.class",
+        "unpacked_files/0/solr-8.10.0/server/start.jar/org/eclipse/jetty/start/FileInitializer.class",
+        "unpacked_files/0/solr-8.10.0/server/start.jar/org/eclipse/jetty/start/StartArgs.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-util-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/lucene-analyzers-common-8.10.0.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/argparse4j-0.8.1.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-common-4.1.50.Final.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-client-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lucene-libs/lucene-analyzers-common-8.10.0.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/kerb-util-1.0.1.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-core-1.24.1.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/metadata-extractor-2.13.0.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/analysis-extras/lib/opennlp-tools-1.9.2.jar",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lucene-libs/lucene-test-framework-8.10.0.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solr-test-framework-8.10.0.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-collections-3.2.2.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/zookeeper-3.6.2.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/util/SimplePostTool.class",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-common-4.1.50.Final.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-deploy-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solr-dataimporthandler-8.10.0.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-util-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/s3-repository/lib/ion-java-1.0.2.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/commons-io-2.8.0.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/hadoop-common-3.2.2.jar",
+        "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/hsqldb-2.4.0.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-server-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/pdfbox-2.0.19.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/util/SimplePostTool.class",
+        "unpacked_files/0/solr-8.10.0/example/exampledocs/post.jar/org/apache/solr/util/SimplePostTool.class",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/xmlbeans-3.1.0.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/fontbox-2.0.19.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/bcpkix-jdk15on-1.65.jar",
+        "unpacked_files/0/solr-8.10.0/server/start.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-engine-core-2.0.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-tools-view-3.0.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-webapp-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/randomizedtesting-runner-2.7.2.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/jackcess-3.0.1.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-io-2.8.0.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-client-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/ext/log4j-core-2.14.1.jar",
+        "unpacked_files/0/solr-8.10.0/dist/solrj-lib/zookeeper-3.6.2.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-servlets-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/lucene-misc-8.10.0.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-tools-generic-3.0.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/langid/lib/opennlp-tools-1.9.2.jar",
+        "unpacked_files/0/solr-8.10.0/server/lib/jetty-util-9.4.41.v20210516.jar",
+        "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/log4j-core-2.14.1.jar"
+      ]
+    }
+  ],
+  "files": [
+    "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-tools-generic-3.0.jar <- via commons-beanutils:commons-beanutils/1.9.3 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-tools-generic-3.0.jar ",
+    "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/derby-10.9.1.0.jar",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/junit4-ant-2.7.2.jar <- via Simple XML/2.7.1 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-tools-generic-3.0.jar <- via commons-beanutils:commons-beanutils/1.9.3 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-engine-core-2.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/jaegertracer-configurator/lib/libthrift-0.13.0.jar",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/janino-3.0.9.jar <- via org.apache.ant:ant/1.7.1 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.bouncycastle:bcprov-jdk15on/1.65 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/bcprov-jdk15on-1.65.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jackson-databind-2.12.3.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/spatial4j-0.7.jar <- via com.fasterxml.jackson.core:jackson-databind/2.7.9.2 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/htrace-core4-4.1.0-incubating.jar <- via jackson-databind/2.4.0 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/jackson-databind-2.12.3.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-oauth-client-1.29.2.jar",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/junit4-ant-2.7.2.jar <- via Guava: Google Core Libraries for Java/25.0-jre (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/guava-25.1-jre.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-cloud-storage-1.113.14.jar <- via com.google.guava:guava/30.1-android (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-buffer-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-resolver-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-codec-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-transport-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-transport-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-buffer-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-transport-native-unix-common-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-resolver-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-codec-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-transport-native-epoll-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-transport-native-epoll-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-handler-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-common-4.1.50.Final.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-transport-native-unix-common-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-common-4.1.50.Final.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-handler-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via com.google.protobuf:protobuf-java/3.11.4 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/protobuf-java-3.11.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-cloud-storage-1.113.14.jar <- via com.google.protobuf:protobuf-java/3.15.5 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/protobuf-java-3.11.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-oauth-client-1.29.2.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-cloud-storage-1.113.14.jar <- via com.google.oauth-client:google-oauth-client/1.31.4 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.jdom:jdom2/2.0.6 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/jdom2-2.0.6.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-deploy-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-webapp/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-webapp-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-servlets-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-webapp/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/commons-compress-1.20.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/commons-compress-1.20.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/commons-compress-1.20.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/commons-compress-1.20.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-codec-4.1.50.Final.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-codec-4.1.50.Final.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-handler-4.1.50.Final.jar <- via io.netty:netty-codec/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-handler-4.1.50.Final.jar <- via io.netty:netty-codec/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-codec-4.1.50.Final.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-codec-4.1.50.Final.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-handler-4.1.50.Final.jar <- via io.netty:netty-codec/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-handler-4.1.50.Final.jar <- via io.netty:netty-codec/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/hadoop-common-3.2.2.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.jsoup:jsoup/1.13.1 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/log4j-core-2.14.1.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/ext/log4j-core-2.14.1.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/log4j-core-2.14.1.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/ext/log4j-core-2.14.1.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/log4j-core-2.14.1.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/ext/log4j-core-2.14.1.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/log4j-core-2.14.1.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/ext/log4j-core-2.14.1.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jackson-databind-2.12.3.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/jackson-databind-2.12.3.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/http2-server-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via xerces:xercesImpl/2.12.0 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/xercesImpl-2.12.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via com.github.junrar:junrar/4.0.0 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-buffer-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-resolver-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-codec-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-transport-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-transport-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-buffer-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-transport-native-unix-common-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-resolver-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-codec-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-transport-native-epoll-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-transport-native-epoll-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-handler-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-common-4.1.50.Final.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-transport-native-unix-common-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-common-4.1.50.Final.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-handler-4.1.50.Final.jar <- via io.netty:netty-common/4.1.50.Final (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/hadoop-common-3.2.2.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/gson-2.7.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/protobuf-java-util-3.11.0.jar <- via com.google.code.gson:gson/2.8.6 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-cloud-storage-1.113.14.jar <- via com.google.code.gson:gson/2.8.6 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/hadoop-common-3.2.2.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via com.google.protobuf:protobuf-java/3.11.4 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/protobuf-java-3.11.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-cloud-storage-1.113.14.jar <- via com.google.protobuf:protobuf-java/3.15.5 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/protobuf-java-3.11.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.apache.uima:uimaj-core/3.1.1 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via com.google.protobuf:protobuf-java/3.11.4 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/protobuf-java-3.11.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-cloud-storage-1.113.14.jar <- via com.google.protobuf:protobuf-java/3.15.5 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/protobuf-java-3.11.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via com.google.protobuf:protobuf-java/3.11.4 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/protobuf-java-3.11.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-cloud-storage-1.113.14.jar <- via com.google.protobuf:protobuf-java/3.15.5 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/protobuf-java-3.11.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.jsoup:jsoup/1.13.1 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/avatica-core-1.18.0.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/calcite-core-1.27.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/s3-repository/lib/woodstox-core-6.2.4.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/woodstox-core-6.2.4.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/woodstox-core-6.2.4.jar",
+    "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/hsqldb-2.4.0.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jackson-databind-2.12.3.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/spatial4j-0.7.jar <- via com.fasterxml.jackson.core:jackson-databind/2.7.9.2 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/htrace-core4-4.1.0-incubating.jar <- via jackson-databind/2.4.0 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/jackson-databind-2.12.3.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jackson-databind-2.12.3.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/spatial4j-0.7.jar <- via com.fasterxml.jackson.core:jackson-databind/2.7.9.2 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/htrace-core4-4.1.0-incubating.jar <- via jackson-databind/2.4.0 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/jackson-databind-2.12.3.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-text-1.6.jar",
+    "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/derby-10.9.1.0.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-io-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/http2-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-io-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-rewrite-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/http2-hpack-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-alpn-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-http-client-transport-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-client/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-alpn-java-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-http-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-util-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-http-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/start.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-util-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-xml-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-deploy-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-webapp/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-alpn-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-http-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-http-client-transport-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-client/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-io-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/metrics-jetty9-4.1.5.jar <- via org.eclipse.jetty:jetty-server/9.4.27.v20200227 (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-util-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-alpn-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-webapp-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-hpack-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-hpack-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-jmx-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-security-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-servlets-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-webapp/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/junit4-ant-2.7.2.jar <- via Guava: Google Core Libraries for Java/25.0-jre (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/guava-25.1-jre.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/gcs-repository/lib/google-cloud-storage-1.113.14.jar <- via com.google.guava:guava/30.1-android (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jose4j-0.6.5.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.xerial:sqlite-jdbc/3.30.1 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.bouncycastle:bcprov-jdk15on/1.65 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/bcpkix-jdk15on-1.65.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/jackcess-encrypt-3.0.0.jar <- via org.bouncycastle:bcprov-jdk15on/1.60 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/bcprov-jdk15on-1.65.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/snappy-java-1.1.7.6.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/snappy-java-1.1.7.6.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/snappy-java-1.1.7.6.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/snappy-java-1.1.7.6.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/snappy-java-1.1.7.6.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/snappy-java-1.1.7.6.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-handler-4.1.50.Final.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-handler-4.1.50.Final.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/http2-hpack-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/http2-common-9.4.41.v20210516.jar <- via org.eclipse.jetty.http2:http2-hpack/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-common-9.4.41.v20210516.jar <- via org.eclipse.jetty.http2:http2-hpack/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-hpack-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-hpack-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-common-9.4.41.v20210516.jar <- via org.eclipse.jetty.http2:http2-hpack/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-deploy-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-webapp/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-webapp-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-servlets-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-webapp/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.apache.uima:uimaj-core/3.1.1 (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-io-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/http2-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-io-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-rewrite-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/http2-hpack-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-alpn-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-alpn-java-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-http-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-util-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-http-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/start.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-util-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-xml-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-deploy-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-webapp/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-alpn-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-http-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-io-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/metrics-jetty9-4.1.5.jar <- via org.eclipse.jetty:jetty-server/9.4.27.v20200227 (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-util-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-alpn-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-webapp-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-hpack-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-hpack-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-jmx-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-util/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-security-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-servlets-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-webapp/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-io/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/snappy-java-1.1.7.6.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/snappy-java-1.1.7.6.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/http2-server-9.4.41.v20210516.jar <- via org.eclipse.jetty.http2:http2-common/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/http2-common-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-common-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-client-9.4.41.v20210516.jar <- via org.eclipse.jetty.http2:http2-common/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-client-9.4.41.v20210516.jar <- via org.eclipse.jetty.http2:http2-common/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-common-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/zookeeper-3.6.2.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/zookeeper-3.6.2.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/metrics-graphite-4.1.5.jar <- via com.rabbitmq:amqp-client/5.5.3 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/json-path-2.4.0.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jose4j-0.6.5.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/s3-repository/lib/ion-java-1.0.2.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/http2-server-9.4.41.v20210516.jar <- via org.eclipse.jetty.http2:http2-common/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/http2-common-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-common-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-client-9.4.41.v20210516.jar <- via org.eclipse.jetty.http2:http2-common/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-client-9.4.41.v20210516.jar <- via org.eclipse.jetty.http2:http2-common/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-common-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/hadoop-common-3.2.2.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-configuration2-2.1.1.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.bouncycastle:bcprov-jdk15on/1.65 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/jackcess-encrypt-3.0.0.jar <- via org.bouncycastle:bcprov-jdk15on/1.60 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/bcprov-jdk15on-1.65.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-parsers-1.24.1.jar <- via org.bouncycastle:bcprov-jdk15on/1.65 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/jackcess-encrypt-3.0.0.jar <- via org.bouncycastle:bcprov-jdk15on/1.60 (package)",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/bcprov-jdk15on-1.65.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/http2-hpack-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-http-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-http-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-http-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/http2-hpack-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/http2-hpack-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-servlets-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-client-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-http/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/http2-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-rewrite-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-alpn-server-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/metrics-jetty9-4.1.5.jar <- via org.eclipse.jetty:jetty-server/9.4.27.v20200227 (package)",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-server-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-security-9.4.41.v20210516.jar <- via org.eclipse.jetty:jetty-server/9.4.41.v20210516 (package)",
+    "WEB-INF/lib/strrat-1.0.0.jar/carLambo/FirstRun.class",
+    "WEB-INF/lib/strrat-1.0.0.jar/carLambo/WzodNXIRgeBkyABvwwufd.class",
+    "WEB-INF/lib/strrat-1.0.0.jar/carLambo/tfqIDcmEmgfVqfTILxYKD.class",
+    "WEB-INF/lib/strrat-1.0.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/dataimporthandler-extras/lib/javax.mail-1.5.1.jar/com/sun/mail/util/logging/MailHandler.class",
+    "unpacked_files/0/solr-8.10.0/contrib/dataimporthandler-extras/lib/javax.mail-1.5.1.jar/javax/mail/internet/MimeBodyPart.class",
+    "unpacked_files/0/solr-8.10.0/contrib/dataimporthandler-extras/lib/javax.mail-1.5.1.jar/javax/mail/internet/MimeMessage.class",
+    "unpacked_files/0/solr-8.10.0/contrib/dataimporthandler-extras/lib/javax.mail-1.5.1.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/analysis-extras/lib/opennlp-tools-1.9.2.jar/opennlp/tools/cmdline/CmdLineUtil.class",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/bcpkix-jdk15on-1.65.jar/org/bouncycastle/openssl/jcajce/JcaPKIXIdentityBuilder.class",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/fontbox-2.0.19.jar/org/apache/fontbox/util/autodetect/NativeFontDirFinder.class",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/fontbox-2.0.19.jar/org/apache/fontbox/util/autodetect/WindowsFontDirFinder.class",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/jackcess-3.0.1.jar/com/healthmarketscience/jackcess/impl/DatabaseImpl.class",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/metadata-extractor-2.13.0.jar/com/drew/metadata/file/FileSystemMetadataReader.class",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/pdfbox-2.0.19.jar/org/apache/pdfbox/pdmodel/font/FileSystemFontProvider.class",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-core-1.24.1.jar/org/apache/tika/parser/AutoDetectParserFactory.class",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/xmlbeans-3.1.0.jar/org/apache/xmlbeans/impl/tool/XSTCTester.class",
+    "unpacked_files/0/solr-8.10.0/contrib/langid/lib/opennlp-tools-1.9.2.jar/opennlp/tools/cmdline/CmdLineUtil.class",
+    "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/argparse4j-0.8.1.jar/net/sourceforge/argparse4j/impl/type/FileVerification.class",
+    "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/argparse4j-0.8.1.jar/net/sourceforge/argparse4j/internal/TerminalWidth.class",
+    "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/log4j-core-2.14.1.jar/org/apache/logging/log4j/core/config/ConfigurationSource.class",
+    "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lucene-libs/lucene-analyzers-common-8.10.0.jar/org/apache/lucene/analysis/hunspell/Dictionary.class",
+    "unpacked_files/0/solr-8.10.0/contrib/s3-repository/lib/ion-java-1.0.2.jar/software/amazon/ion/apps/BaseApp.class",
+    "unpacked_files/0/solr-8.10.0/contrib/s3-repository/lib/ion-java-1.0.2.jar/software/amazon/ion/apps/PrintApp.class",
+    "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-engine-core-2.0.jar/org/apache/velocity/runtime/resource/loader/FileResourceLoader.class",
+    "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-engine-core-2.0.jar/org/apache/velocity/util/ExtProperties.class",
+    "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-tools-generic-3.0.jar/org/apache/velocity/tools/generic/ImportSupport.class",
+    "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-tools-view-3.0.jar/org/apache/velocity/tools/view/WebappResourceLoader.class",
+    "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/core/CachingDirectoryFactory.class",
+    "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/core/SolrResourceLoader.class",
+    "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/handler/CatStream.class",
+    "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/handler/PingRequestHandler.class",
+    "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/handler/ReplicationHandler$LocalFsFileStream.class",
+    "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/handler/admin/ShowFileRequestHandler.class",
+    "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/rest/ManagedResourceStorage.class",
+    "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/util/HdfsUtil.class",
+    "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/util/SolrCLI$AuthTool.class",
+    "unpacked_files/0/solr-8.10.0/dist/solr-dataimporthandler-8.10.0.jar/org/apache/solr/handler/dataimport/FileDataSource.class",
+    "unpacked_files/0/solr-8.10.0/dist/solr-dataimporthandler-8.10.0.jar/org/apache/solr/handler/dataimport/SimplePropertiesWriter.class",
+    "unpacked_files/0/solr-8.10.0/dist/solr-test-framework-8.10.0.jar/org/apache/solr/EmbeddedSolrServerTestBase.class",
+    "unpacked_files/0/solr-8.10.0/dist/solr-test-framework-8.10.0.jar/org/apache/solr/SolrTestCase.class",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/commons-io-2.8.0.jar/org/apache/commons/io/FileUtils.class",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/commons-io-2.8.0.jar/org/apache/commons/io/file/PathUtils.class",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/commons-io-2.8.0.jar/org/apache/commons/io/filefilter/CanExecuteFileFilter.class",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/commons-io-2.8.0.jar/org/apache/commons/io/filefilter/CanReadFileFilter.class",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/commons-io-2.8.0.jar/org/apache/commons/io/filefilter/CanWriteFileFilter.class",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/commons-io-2.8.0.jar/org/apache/commons/io/filefilter/MagicNumberFileFilter.class",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/commons-io-2.8.0.jar/org/apache/commons/io/output/LockableFileWriter.class",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-client-9.4.41.v20210516.jar/org/eclipse/jetty/client/util/PathContentProvider.class",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-util-9.4.41.v20210516.jar/org/eclipse/jetty/util/MultiReleaseJarFile.class",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-util-9.4.41.v20210516.jar/org/eclipse/jetty/util/RolloverFileOutputStream.class",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-common-4.1.50.Final.jar/io/netty/util/internal/NativeLibraryLoader$NoexecVolumeDetector.class",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-common-4.1.50.Final.jar/io/netty/util/internal/NativeLibraryLoader.class",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/zookeeper-3.6.2.jar/org/apache/zookeeper/ZKUtil.class",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/zookeeper-3.6.2.jar/org/apache/zookeeper/server/persistence/FileTxnSnapLog.class",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/zookeeper-3.6.2.jar/org/apache/zookeeper/server/persistence/TxnLogToolkit.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/AbstractCvsTask.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/BuildNumber.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/Execute.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/Expand.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/Get.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/Move.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/SubAnt.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/Tar.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/Touch.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/Zip.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/email/PlainMailer.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/email/UUMailer.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/optional/EchoProperties.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/optional/Rpm.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/taskdefs/optional/XMLValidateTask.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/types/XMLCatalog.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/types/selectors/ReadableSelector.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/types/selectors/WritableSelector.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/types/selectors/modifiedselector/ChecksumAlgorithm.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/types/selectors/modifiedselector/DigestAlgorithm.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/types/selectors/modifiedselector/HashvalueAlgorithm.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/types/selectors/modifiedselector/PropertiesfileCache.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/util/ResourceUtils.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar/org/apache/tools/ant/util/SymbolicLinkUtils.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/randomizedtesting-runner-2.7.2.jar/com/carrotsearch/randomizedtesting/RandomizedTest.class",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lucene-libs/lucene-test-framework-8.10.0.jar/org/apache/lucene/util/TestRuleTemporaryFilesCleanup.class",
+    "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/hsqldb-2.4.0.jar/org/hsqldb/lib/RCData.class",
+    "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/hsqldb-2.4.0.jar/org/hsqldb/lib/tar/TarFileInputStream.class",
+    "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/hsqldb-2.4.0.jar/org/hsqldb/lib/tar/TarFileOutputStream.class",
+    "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/hsqldb-2.4.0.jar/org/hsqldb/lib/tar/TarGenerator$TarEntrySupplicant.class",
+    "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/hsqldb-2.4.0.jar/org/hsqldb/lib/tar/TarGenerator.class",
+    "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/hsqldb-2.4.0.jar/org/hsqldb/lib/tar/TarReader.class",
+    "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/hsqldb-2.4.0.jar/org/hsqldb/server/ServerAcl.class",
+    "unpacked_files/0/solr-8.10.0/example/exampledocs/post.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/ext/log4j-core-2.14.1.jar/org/apache/logging/log4j/core/config/ConfigurationSource.class",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-deploy-9.4.41.v20210516.jar/org/eclipse/jetty/deploy/providers/ScanningAppProvider.class",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-server-9.4.41.v20210516.jar/org/eclipse/jetty/server/session/FileSessionDataStore.class",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-servlets-9.4.41.v20210516.jar/org/eclipse/jetty/servlets/CGI.class",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-servlets-9.4.41.v20210516.jar/org/eclipse/jetty/servlets/DataRateLimitedServlet.class",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-util-9.4.41.v20210516.jar/org/eclipse/jetty/util/MultiReleaseJarFile.class",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-util-9.4.41.v20210516.jar/org/eclipse/jetty/util/RolloverFileOutputStream.class",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-webapp-9.4.41.v20210516.jar/org/eclipse/jetty/webapp/WebInfConfiguration.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-collections-3.2.2.jar/org/apache/commons/collections/ExtendedProperties.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-io-2.8.0.jar/org/apache/commons/io/FileUtils.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-io-2.8.0.jar/org/apache/commons/io/file/PathUtils.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-io-2.8.0.jar/org/apache/commons/io/filefilter/CanExecuteFileFilter.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-io-2.8.0.jar/org/apache/commons/io/filefilter/CanReadFileFilter.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-io-2.8.0.jar/org/apache/commons/io/filefilter/CanWriteFileFilter.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-io-2.8.0.jar/org/apache/commons/io/filefilter/MagicNumberFileFilter.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-io-2.8.0.jar/org/apache/commons/io/output/LockableFileWriter.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/hadoop-common-3.2.2.jar/org/apache/hadoop/fs/FileUtil.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/hadoop-common-3.2.2.jar/org/apache/hadoop/security/KDiag.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/hadoop-common-3.2.2.jar/org/apache/hadoop/security/alias/LocalJavaKeyStoreProvider.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-client-9.4.41.v20210516.jar/org/eclipse/jetty/client/util/PathContentProvider.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-util-9.4.41.v20210516.jar/org/eclipse/jetty/util/MultiReleaseJarFile.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-util-9.4.41.v20210516.jar/org/eclipse/jetty/util/RolloverFileOutputStream.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/kerb-util-1.0.1.jar/org/apache/kerby/kerberos/kerb/ccache/CredentialCache.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/kerb-util-1.0.1.jar/org/apache/kerby/kerberos/kerb/keytab/Keytab.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/lucene-analyzers-common-8.10.0.jar/org/apache/lucene/analysis/hunspell/Dictionary.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/lucene-misc-8.10.0.jar/org/apache/lucene/store/HardlinkCopyDirectoryWrapper.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-common-4.1.50.Final.jar/io/netty/util/internal/NativeLibraryLoader$NoexecVolumeDetector.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-common-4.1.50.Final.jar/io/netty/util/internal/NativeLibraryLoader.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/core/CachingDirectoryFactory.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/core/SolrResourceLoader.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/handler/CatStream.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/handler/PingRequestHandler.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/handler/ReplicationHandler$LocalFsFileStream.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/handler/admin/ShowFileRequestHandler.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/rest/ManagedResourceStorage.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/util/HdfsUtil.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/util/SolrCLI$AuthTool.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/zookeeper-3.6.2.jar/org/apache/zookeeper/ZKUtil.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/zookeeper-3.6.2.jar/org/apache/zookeeper/server/persistence/FileTxnSnapLog.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/zookeeper-3.6.2.jar/org/apache/zookeeper/server/persistence/TxnLogToolkit.class",
+    "unpacked_files/0/solr-8.10.0/server/start.jar/org/eclipse/jetty/start/FS.class",
+    "unpacked_files/0/solr-8.10.0/server/start.jar/org/eclipse/jetty/start/FileInitializer.class",
+    "unpacked_files/0/solr-8.10.0/server/start.jar/org/eclipse/jetty/start/StartArgs.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-util-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/lucene-analyzers-common-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/argparse4j-0.8.1.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/netty-common-4.1.50.Final.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/jetty-client-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lucene-libs/lucene-analyzers-common-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/kerb-util-1.0.1.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/tika-core-1.24.1.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/metadata-extractor-2.13.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/analysis-extras/lib/opennlp-tools-1.9.2.jar",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lucene-libs/lucene-test-framework-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solr-test-framework-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-collections-3.2.2.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/zookeeper-3.6.2.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar/org/apache/solr/util/SimplePostTool.class",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/netty-common-4.1.50.Final.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-deploy-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solr-dataimporthandler-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-util-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/s3-repository/lib/ion-java-1.0.2.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/commons-io-2.8.0.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/hadoop-common-3.2.2.jar",
+    "unpacked_files/0/solr-8.10.0/example/example-DIH/solr/db/lib/hsqldb-2.4.0.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-server-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/pdfbox-2.0.19.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar/org/apache/solr/util/SimplePostTool.class",
+    "unpacked_files/0/solr-8.10.0/example/exampledocs/post.jar/org/apache/solr/util/SimplePostTool.class",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/xmlbeans-3.1.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/fontbox-2.0.19.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/bcpkix-jdk15on-1.65.jar",
+    "unpacked_files/0/solr-8.10.0/server/start.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-engine-core-2.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-tools-view-3.0.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solr-core-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/ant-1.8.2.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/solr-core-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-webapp-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/dist/test-framework/lib/randomizedtesting-runner-2.7.2.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/extraction/lib/jackcess-3.0.1.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/commons-io-2.8.0.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/jetty-client-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/ext/log4j-core-2.14.1.jar",
+    "unpacked_files/0/solr-8.10.0/dist/solrj-lib/zookeeper-3.6.2.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-servlets-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/server/solr-webapp/webapp/WEB-INF/lib/lucene-misc-8.10.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/velocity/lib/velocity-tools-generic-3.0.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/langid/lib/opennlp-tools-1.9.2.jar",
+    "unpacked_files/0/solr-8.10.0/server/lib/jetty-util-9.4.41.v20210516.jar",
+    "unpacked_files/0/solr-8.10.0/contrib/prometheus-exporter/lib/log4j-core-2.14.1.jar"
+  ]
+}
